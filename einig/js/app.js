@@ -192,7 +192,7 @@ function renderShell(content) {
   getApp().innerHTML = `
     <nav class="nav">
       <a class="logo" onclick="navigate('')">
-        <span class="logo-dot"></span>entscheid
+        <span class="logo-dot"></span>einig
       </a>
       <button class="lang-toggle" id="langToggle">${t("lang_label")}</button>
     </nav>
@@ -236,7 +236,7 @@ function renderSetup() {
         <div class="setup-step">
           <div class="step-num">4</div>
           <div class="step-text">
-            Werte in <code>entscheid/js/firebase-config.js</code> eintragen und pushen.
+            Werte in <code>einig/js/firebase-config.js</code> eintragen und pushen.
           </div>
         </div>
       </div>

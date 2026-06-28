@@ -1,8 +1,8 @@
-# entscheid
+# einig
 
 Group decisions without the back-and-forth. Create a vote, share the link, done.
 
-→ [kevinklepov.github.io/entscheid](https://kevinklepov.github.io/entscheid)
+→ [kevinklepov.github.io/einig](https://kevinklepov.github.io/einig)
 
 ## Stack
 
@@ -12,4 +12,4 @@ Group decisions without the back-and-forth. Create a vote, share the link, done.
 
 ## Local dev
 
-Just open `entscheid/index.html` in a browser. Add your Firebase config to `entscheid/js/firebase-config.js`.
+Just open `einig/index.html` in a browser. Add your Firebase config to `einig/js/firebase-config.js`.
