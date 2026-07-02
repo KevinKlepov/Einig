@@ -1,712 +1,886 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" data-theme="light">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kevin Klepov – App Developer</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kevin Klepov – angehender Fachinformatiker</title>
+<script>document.documentElement.classList.add('js');</script>
 
-  <!-- SEO -->
-  <meta name="description" content="Kevin Klepov – App-Entwickler aus dem Odenwald. Ich baue mobile Apps, die echte Probleme lösen. Aktuelles Projekt: BauLog, digitale Bautagesberichte für Handwerker.">
-  <meta name="author" content="Kevin Klepov">
-  <meta name="theme-color" content="#05050c">
+<meta name="description" content="Kevin Klepov, 23, aus Hessen – auf dem Weg in die Fachinformatik. PC-Bau, Netzwerke, Windows, IT-Support, Audio- & Streaming-Setups.">
+<meta name="author" content="Kevin Klepov">
+<meta name="theme-color" content="#FFF6FB">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Kevin Klepov – angehender Fachinformatiker">
+<meta property="og:description" content="Ich baue, verkabele und repariere Systeme – und bringe ihnen bei, sauber zu laufen.">
 
-  <!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://kevinklepov.github.io/">
-  <meta property="og:title" content="Kevin Klepov – App Developer">
-  <meta property="og:description" content="Ich baue Apps, die wirklich genutzt werden. App-Entwickler aus Deutschland – aktuelles Projekt: BauLog für Handwerker.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='18' cy='20' r='9' fill='%23FFFDFB' stroke='%237A5A63' stroke-width='3'/%3E%3Ccircle cx='46' cy='20' r='9' fill='%23FFFDFB' stroke='%237A5A63' stroke-width='3'/%3E%3Crect x='12' y='18' width='40' height='38' rx='18' fill='%23FFFDFB' stroke='%237A5A63' stroke-width='3.5'/%3E%3Ccircle cx='26' cy='36' r='3.4' fill='%237A5A63'/%3E%3Ccircle cx='38' cy='36' r='3.4' fill='%237A5A63'/%3E%3Cellipse cx='20' cy='42' rx='3.5' ry='2.2' fill='%23FFA9C9'/%3E%3Cellipse cx='44' cy='42' rx='3.5' ry='2.2' fill='%23FFA9C9'/%3E%3Cpath d='M29 41 q3 3 6 0' stroke='%237A5A63' stroke-width='2.4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
 
-  <!-- Twitter / X -->
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Kevin Klepov – App Developer">
-  <meta name="twitter:description" content="Ich baue Apps, die wirklich genutzt werden. App-Entwickler aus Deutschland.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- Favicon: K-Monogramm mit Verlauf, inline -->
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%236366f1'/%3E%3Cstop offset='1' stop-color='%23a855f7'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='url(%23g)'/%3E%3Ctext x='32' y='44' font-family='Segoe UI,Arial,sans-serif' font-size='38' font-weight='800' fill='white' text-anchor='middle'%3EK%3C/text%3E%3C/svg%3E">
+<style>
+/* ============ RESET & TOKENS ============ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+:root{
+  /* Girlypop pastel palette */
+  --paper:#FFF6FB; --paper-2:#FCEAF3;
+  --card:#FFFFFF; --line:#F4DBE8;
+  --ink:#5F4650; --ink-soft:#A98A97;
 
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  --pink:#FF8FBE; --pink-soft:#FFD9EA;
+  --lav:#B79CF0; --lav-soft:#E7DCFB;
+  --mint:#68CFAC; --mint-soft:#D2F4E7;
+  --blue:#86C3F5; --blue-soft:#DBECFB;
+  --yellow:#FFCF6B; --yellow-soft:#FFECBE;
 
-    :root {
-      --bg: #05050c;
-      --surface: rgba(255,255,255,0.035);
-      --surface-2: rgba(255,255,255,0.06);
-      --border: rgba(255,255,255,0.09);
-      --border-hi: rgba(129,140,248,0.45);
-      --text: #eef0ff;
-      --muted: #9295b3;
-      --indigo: #6366f1;
-      --violet: #a855f7;
-      --cyan: #22d3ee;
-      --mint: #6ee7b7;
-      --amber: #fbbf24;
-      --font-display: 'Space Grotesk', 'Segoe UI', sans-serif;
-      --font-body: 'Inter', -apple-system, 'Segoe UI', sans-serif;
-    }
+  /* Characters (konstant in beiden Themes) */
+  --m-body:#FFFDFB; --m-line:#7A5A63; --m-blush:#FFA9C9;
+  --m-accent:var(--pink);
 
-    html { scroll-behavior: smooth; }
+  --r-sm:14px; --r:24px; --r-lg:34px; --r-pill:999px;
+  --shadow-s:0 3px 0 rgba(122,90,99,.08), 0 8px 20px rgba(255,143,190,.16);
+  --shadow-m:0 4px 0 rgba(122,90,99,.10), 0 18px 42px rgba(255,143,190,.22);
+  --shadow-pop:0 12px 34px rgba(255,143,190,.4);
+  --maxw:1120px;
+  --ease:cubic-bezier(.34,1.4,.5,1);
+}
 
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: var(--font-body);
-      line-height: 1.65;
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-    }
+[data-theme="dark"]{
+  --paper:#241A20; --paper-2:#2E212A;
+  --card:#2C2029; --line:#443340;
+  --ink:#F7E9F1; --ink-soft:#C4A9B8;
+  --pink-soft:#4a2937; --lav-soft:#332a4a; --mint-soft:#1f3d34; --blue-soft:#1f3040; --yellow-soft:#463818;
+  --shadow-s:0 3px 0 rgba(0,0,0,.22), 0 8px 20px rgba(0,0,0,.34);
+  --shadow-m:0 4px 0 rgba(0,0,0,.3), 0 18px 44px rgba(0,0,0,.46);
+  color-scheme:dark;
+}
 
-    ::selection { background: rgba(99,102,241,0.4); }
+html{scroll-behavior:smooth}
+body{
+  background:var(--paper);color:var(--ink);
+  font-family:'Nunito',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  font-size:clamp(1rem,.5vw + .92rem,1.075rem);line-height:1.65;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+  transition:background .4s ease,color .4s ease;
+}
+/* soft dotted paper */
+body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.6;
+  background:radial-gradient(circle at 1px 1px, rgba(255,143,190,.13) 1px, transparent 0);background-size:24px 24px}
+[data-theme="dark"] body::before{background:radial-gradient(circle at 1px 1px, rgba(255,255,255,.045) 1px, transparent 0);background-size:24px 24px}
 
-    h1, h2, h3, .logo, .btn, .stat-num { font-family: var(--font-display); }
+h1,h2,h3,.display{font-family:'Fredoka',sans-serif;font-weight:600;line-height:1.1}
+a{color:inherit}
+::selection{background:var(--pink);color:#fff}
 
-    /* ── BACKGROUND LAYERS ── */
-    .bg-grid {
-      position: fixed; inset: 0; z-index: 0; pointer-events: none;
-      background-image:
-        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
-      background-size: 56px 56px;
-      mask-image: radial-gradient(ellipse 90% 70% at 50% 0%, black 40%, transparent 100%);
-      -webkit-mask-image: radial-gradient(ellipse 90% 70% at 50% 0%, black 40%, transparent 100%);
-    }
-    .bg-blobs { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
-    .blob { position: absolute; border-radius: 50%; filter: blur(130px); opacity: 0.16; animation: drift 20s ease-in-out infinite alternate; }
-    .blob-1 { width: 620px; height: 620px; background: var(--indigo); top: -220px; left: -180px; }
-    .blob-2 { width: 520px; height: 520px; background: var(--violet); top: 28%; right: -160px; animation-duration: 26s; animation-delay: -9s; }
-    .blob-3 { width: 420px; height: 420px; background: var(--cyan); bottom: 8%; left: 18%; animation-duration: 23s; animation-delay: -5s; opacity: 0.1; }
-    @keyframes drift {
-      from { transform: translate(0,0) scale(1); }
-      to   { transform: translate(70px,45px) scale(1.12); }
-    }
+/* ============ HELPERS ============ */
+.wrap{width:min(100% - 2.4rem,var(--maxw));margin-inline:auto;position:relative;z-index:1}
+.eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-family:'Fredoka',sans-serif;font-weight:600;
+  font-size:.82rem;letter-spacing:.02em;background:var(--card);color:var(--ink);
+  border:2.5px solid var(--m-line);border-radius:var(--r-pill);padding:.42rem 1rem;
+  box-shadow:var(--shadow-s);transform:rotate(-1.5deg)}
+.eyebrow .dot{width:10px;height:10px;border-radius:50%;background:var(--pink);box-shadow:0 0 0 3px var(--pink-soft)}
 
-    /* Spotlight, folgt der Maus */
-    .spotlight {
-      position: fixed; inset: 0; z-index: 1; pointer-events: none;
-      background: radial-gradient(600px circle at var(--mx, 50%) var(--my, 30%), rgba(99,102,241,0.09), transparent 65%);
-    }
+.section-head{max-width:46ch;margin-bottom:2.6rem}
+.kicker{font-family:'Fredoka',sans-serif;font-weight:600;letter-spacing:.1em;text-transform:uppercase;font-size:.78rem;color:var(--ink-soft)}
+.section-head h2{font-size:clamp(2rem,4.6vw,3.2rem);margin:.35rem 0 .5rem}
+.section-head p{color:var(--ink-soft);font-size:1.05rem}
 
-    /* ── NAV ── */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 999;
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 1rem 2.5rem;
-      background: rgba(5,5,12,0.6);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-      border-bottom: 1px solid transparent;
-      transition: background .3s, border-color .3s;
-    }
-    nav.scrolled { background: rgba(5,5,12,0.88); border-bottom-color: var(--border); }
-    .logo { font-weight: 700; font-size: 1.15rem; text-decoration: none; color: var(--text); letter-spacing: -0.02em; }
-    .logo span {
-      background: linear-gradient(135deg, var(--indigo), var(--violet));
-      -webkit-background-clip: text; background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    nav ul { list-style: none; display: flex; gap: 2rem; align-items: center; }
-    nav ul a { color: var(--muted); text-decoration: none; font-size: 0.88rem; font-weight: 500; transition: color .2s; position: relative; }
-    nav ul a::after {
-      content: ''; position: absolute; bottom: -4px; left: 0; right: 0; height: 1.5px;
-      background: linear-gradient(90deg, var(--indigo), var(--violet));
-      transform: scaleX(0); transform-origin: left; transition: transform .3s;
-    }
-    nav ul a:hover { color: var(--text); }
-    nav ul a:hover::after { transform: scaleX(1); }
-    .nav-cta {
-      padding: 0.45rem 1.1rem; border-radius: 100px;
-      background: linear-gradient(135deg, var(--indigo), var(--violet));
-      color: #fff !important; font-weight: 600; font-size: 0.82rem !important;
-      box-shadow: 0 0 20px rgba(99,102,241,0.35);
-      transition: transform .2s, box-shadow .2s !important;
-    }
-    .nav-cta::after { display: none; }
-    .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 0 32px rgba(99,102,241,0.55); }
+.hl{position:relative;white-space:nowrap;z-index:0}
+.hl::after{content:"";position:absolute;left:-.08em;right:-.08em;bottom:.04em;height:.42em;
+  background:var(--pink-soft);border-radius:8px;z-index:-1;transform:rotate(-1deg)}
+.hl.lav::after{background:var(--lav-soft)}
+.hl.mint::after{background:var(--mint-soft)}
 
-    .wrap { position: relative; z-index: 2; }
+/* sparkles */
+.spark{position:absolute;pointer-events:none;z-index:1;color:var(--pink);animation:twinkle 3s ease-in-out infinite}
+.spark.s2{color:var(--lav);animation-delay:-1s}
+.spark.s3{color:var(--yellow);animation-delay:-2s}
+@keyframes twinkle{0%,100%{transform:scale(1) rotate(0);opacity:.55}50%{transform:scale(1.35) rotate(18deg);opacity:1}}
 
-    /* ── HERO ── */
-    .hero {
-      min-height: 100svh;
-      display: flex; flex-direction: column; justify-content: center;
-      padding: 8rem 2.5rem 4rem;
-      max-width: 1000px; margin: 0 auto;
-    }
-    .hero-eyebrow {
-      display: inline-flex; align-items: center; gap: 0.55rem;
-      background: rgba(99,102,241,0.1);
-      border: 1px solid rgba(99,102,241,0.3);
-      border-radius: 100px; padding: 0.38rem 1.05rem;
-      font-size: 0.8rem; font-weight: 600; color: #b3bcfd;
-      letter-spacing: 0.04em; margin-bottom: 2.2rem; width: fit-content;
-      animation: fadeUp .8s ease both;
-    }
-    .hero-eyebrow::before {
-      content: ''; width: 7px; height: 7px; border-radius: 50%;
-      background: var(--mint); box-shadow: 0 0 10px var(--mint);
-      animation: pulse 2s infinite;
-    }
-    @keyframes pulse { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.45; transform: scale(1.35); } }
+/* ============ SKIP ============ */
+.skip{position:absolute;left:-9999px;top:0;background:var(--m-line);color:#fff;padding:.7rem 1.1rem;border-radius:0 0 var(--r-sm) 0;z-index:2000;font-weight:800}
+.skip:focus{left:0}
 
-    .hero h1 {
-      font-size: clamp(2.9rem, 7.5vw, 5.4rem);
-      font-weight: 700; line-height: 1.05; letter-spacing: -0.035em;
-      margin-bottom: 1.6rem;
-      animation: fadeUp .8s ease .1s both;
-    }
-    .hero h1 .grad {
-      background: linear-gradient(120deg, var(--indigo), var(--violet), var(--cyan), var(--indigo));
-      background-size: 280% auto;
-      -webkit-background-clip: text; background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: shine 7s linear infinite;
-    }
-    @keyframes shine { to { background-position: 280% center; } }
+/* ============ HEADER ============ */
+header.nav{position:sticky;top:0;z-index:900;backdrop-filter:blur(10px);
+  background:color-mix(in srgb,var(--paper) 82%,transparent);border-bottom:2.5px solid transparent;transition:border-color .3s}
+header.nav.scrolled{border-color:var(--line)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.7rem 0}
+.brand{display:inline-flex;align-items:center;gap:.55rem;font-family:'Fredoka',sans-serif;font-weight:700;font-size:1.2rem;text-decoration:none}
+.brand .brand-mascot{width:38px;height:38px;flex:none}
+.brand b{color:var(--pink)}
+nav.menu{display:flex;align-items:center;gap:.3rem}
+nav.menu a{text-decoration:none;font-family:'Fredoka',sans-serif;font-weight:500;font-size:.95rem;color:var(--ink-soft);
+  padding:.5rem .85rem;border-radius:var(--r-pill);transition:all .2s}
+nav.menu a:hover,nav.menu a:focus-visible{color:var(--ink);background:var(--paper-2)}
+.icon-btn{width:44px;height:44px;flex:none;display:grid;place-items:center;border:2.5px solid var(--m-line);
+  border-radius:50%;background:var(--card);color:var(--ink);cursor:pointer;font-size:1.1rem;box-shadow:var(--shadow-s);
+  transition:transform .25s var(--ease)}
+.icon-btn:hover{transform:translateY(-2px) rotate(-10deg)}
+.icon-btn:active{transform:scale(.92)}
+.icon-btn .sun{display:none}
+[data-theme="dark"] .icon-btn .moon{display:none}
+[data-theme="dark"] .icon-btn .sun{display:inline}
 
-    .hero-sub {
-      font-size: 1.13rem; color: var(--muted); max-width: 560px;
-      margin-bottom: 2.6rem; line-height: 1.8;
-      animation: fadeUp .8s ease .2s both;
-    }
-    .hero-sub strong { color: #c7bffd; font-weight: 600; }
+:where(a,button,input):focus-visible{outline:3px solid var(--lav);outline-offset:3px;border-radius:8px}
 
-    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; animation: fadeUp .8s ease .3s both; }
+/* ============ CHARACTERS ============ */
+.mascot{display:block;overflow:visible}
+.mascot .eye{transform-box:fill-box;transform-origin:center;animation:blink 5.5s infinite}
+.mascot .eye.e2{animation-delay:.06s}
+@keyframes blink{0%,94%,100%{transform:scaleY(1)}97%{transform:scaleY(.12)}}
+.float{animation:float 5s ease-in-out infinite}
+.float.b{animation-delay:-2.3s}.float.c{animation-delay:-1.1s}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.wave-arm{transform-box:fill-box;transform-origin:22% 92%;animation:wave 3s ease-in-out infinite}
+@keyframes wave{0%,60%,100%{transform:rotate(0)}70%{transform:rotate(-18deg)}80%{transform:rotate(5deg)}90%{transform:rotate(-13deg)}}
+.heart-bob{transform-box:fill-box;transform-origin:center;animation:hb 2.4s ease-in-out infinite}
+@keyframes hb{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-5px) scale(1.08)}}
 
-    .btn {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      padding: 0.8rem 1.7rem; border-radius: 12px;
-      font-size: 0.92rem; font-weight: 600; text-decoration: none;
-      transition: all .25s cubic-bezier(.4,0,.2,1);
-      cursor: pointer; border: none; position: relative; overflow: hidden;
-      letter-spacing: 0.01em;
-    }
-    .btn::after { content: ''; position: absolute; inset: 0; background: #fff; opacity: 0; transition: opacity .2s; }
-    .btn:hover::after { opacity: 0.08; }
-    .btn-primary {
-      background: linear-gradient(135deg, var(--indigo), var(--violet));
-      color: #fff; box-shadow: 0 4px 32px rgba(99,102,241,0.42);
-    }
-    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 48px rgba(99,102,241,0.6); }
-    .btn-outline {
-      background: var(--surface); color: var(--text);
-      border: 1px solid var(--border);
-      backdrop-filter: blur(10px);
-    }
-    .btn-outline:hover { transform: translateY(-2px); border-color: var(--border-hi); }
+/* speech bubble */
+.bubble{position:relative;background:var(--card);border:2.5px solid var(--m-line);border-radius:20px;
+  padding:.7rem 1rem;font-family:'Fredoka',sans-serif;font-weight:500;font-size:.95rem;box-shadow:var(--shadow-s);
+  max-width:16rem;line-height:1.4}
+.bubble .emo{font-weight:400}
+.bubble::after,.bubble::before{content:"";position:absolute;width:0;height:0;border-style:solid}
+.bubble.down::after{bottom:-14px;left:30px;border-width:14px 12px 0 0;border-color:var(--card) transparent transparent transparent}
+.bubble.down::before{bottom:-18px;left:28px;border-width:18px 15px 0 0;border-color:var(--m-line) transparent transparent transparent}
+.bubble.left::after{left:-13px;top:22px;border-width:9px 14px 9px 0;border-color:transparent var(--card) transparent transparent}
+.bubble.left::before{left:-17px;top:20px;border-width:11px 17px 11px 0;border-color:transparent var(--m-line) transparent transparent}
 
-    /* Hero-Stats */
-    .hero-stats {
-      display: flex; gap: 2.8rem; flex-wrap: wrap;
-      margin-top: 4rem;
-      animation: fadeUp .8s ease .45s both;
-    }
-    .stat { display: flex; flex-direction: column; gap: 0.15rem; }
-    .stat-num {
-      font-size: 1.7rem; font-weight: 700; letter-spacing: -0.02em;
-      background: linear-gradient(135deg, #dfe3ff, #a5b4fc);
-      -webkit-background-clip: text; background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .stat-label { font-size: 0.8rem; color: var(--muted); font-weight: 500; }
+/* ============ HERO ============ */
+.hero{padding:clamp(2.4rem,7vw,4.6rem) 0 clamp(3rem,7vw,5rem);position:relative}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:2.4rem;align-items:center}
+.hero h1{font-size:clamp(2.6rem,6.6vw,4.7rem);margin:1.1rem 0 1.2rem;font-weight:700}
+.hero .lede{font-size:clamp(1.08rem,1.6vw,1.28rem);color:var(--ink-soft);max-width:34ch;margin-bottom:1.9rem}
+.hero .lede b{color:var(--ink);font-weight:800}
+.cta-row{display:flex;flex-wrap:wrap;gap:.8rem;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:.5rem;font-family:'Fredoka',sans-serif;font-weight:600;font-size:1rem;
+  text-decoration:none;padding:.85rem 1.6rem;border-radius:var(--r-pill);border:2.5px solid var(--m-line);cursor:pointer;
+  transition:transform .22s var(--ease),box-shadow .22s;box-shadow:var(--shadow-s)}
+.btn-primary{background:var(--pink);color:#fff}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:var(--shadow-pop)}
+.btn-ghost{background:var(--card);color:var(--ink)}
+.btn-ghost:hover{transform:translateY(-3px);box-shadow:var(--shadow-m)}
+.btn:active{transform:translateY(0) scale(.98)}
 
-    /* ── MARQUEE ── */
-    .marquee {
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      padding: 1.1rem 0; overflow: hidden; position: relative;
-      background: rgba(255,255,255,0.015);
-    }
-    .marquee::before, .marquee::after {
-      content: ''; position: absolute; top: 0; bottom: 0; width: 120px; z-index: 2; pointer-events: none;
-    }
-    .marquee::before { left: 0; background: linear-gradient(90deg, var(--bg), transparent); }
-    .marquee::after { right: 0; background: linear-gradient(-90deg, var(--bg), transparent); }
-    .marquee-track {
-      display: flex; gap: 3.2rem; width: max-content;
-      animation: scroll 30s linear infinite;
-    }
-    .marquee-track span {
-      font-family: var(--font-display);
-      font-size: 0.95rem; font-weight: 600; color: var(--muted);
-      display: flex; align-items: center; gap: 3.2rem; white-space: nowrap;
-    }
-    .marquee-track span::after { content: '✦'; color: rgba(129,140,248,0.5); font-size: 0.7rem; }
-    @keyframes scroll { to { transform: translateX(-50%); } }
+.facts{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.8rem}
+.chip{display:inline-flex;align-items:center;gap:.45rem;font-weight:700;font-size:.85rem;
+  background:var(--paper-2);border:2px solid var(--line);border-radius:var(--r-pill);padding:.35rem .85rem}
+.chip .em{font-size:1rem}
 
-    /* ── SECTIONS ── */
-    section { max-width: 1000px; margin: 0 auto; padding: 6.5rem 2.5rem; }
-    .section-label {
-      font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.18em;
-      color: #a5b4fc; font-weight: 700; margin-bottom: 0.6rem;
-      display: flex; align-items: center; gap: 0.7rem;
-    }
-    .section-label::before { content: ''; width: 26px; height: 1.5px; background: linear-gradient(90deg, var(--indigo), var(--violet)); }
-    section > h2 { font-size: clamp(1.9rem, 4vw, 2.5rem); font-weight: 700; letter-spacing: -0.025em; margin-bottom: 0.7rem; }
-    .section-desc { color: var(--muted); margin-bottom: 3.2rem; font-size: 1.02rem; max-width: 560px; }
+.hero-visual{position:relative;display:grid;place-items:center;min-height:360px}
+.hero-blob{position:absolute;width:92%;aspect-ratio:1;background:radial-gradient(circle at 50% 45%,var(--pink-soft),transparent 62%);filter:blur(4px);z-index:0}
+.hero-visual .bit-main{width:min(370px,80vw);position:relative;z-index:1}
+.hero-bubble{position:absolute;top:2%;right:-3%;z-index:3;transform:rotate(2deg)}
+.friend{position:absolute;z-index:2}
+.friend.stella{width:78px;bottom:20%;left:-2%}
+.friend.nimo{width:120px;top:8%;left:2%}
+.hero-badge{position:absolute;bottom:2%;left:6%;z-index:3;background:var(--yellow);color:var(--ink);
+  border:2.5px solid var(--m-line);border-radius:var(--r-pill);padding:.42rem .9rem;font-family:'Fredoka',sans-serif;
+  font-weight:600;font-size:.84rem;box-shadow:var(--shadow-s);transform:rotate(-4deg)}
 
-    /* ── FEATURED PROJECT (BauLog) ── */
-    .featured {
-      display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 3rem;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 26px; padding: 3rem;
-      backdrop-filter: blur(20px);
-      position: relative; overflow: hidden;
-      transition: border-color .35s, box-shadow .35s;
-    }
-    .featured::before {
-      content: ''; position: absolute; inset: 0;
-      background: radial-gradient(ellipse at 85% 20%, rgba(168,85,247,0.09), transparent 55%);
-      pointer-events: none;
-    }
-    .featured:hover { border-color: var(--border-hi); box-shadow: 0 24px 80px rgba(99,102,241,0.16); }
+/* ============ STRIP ============ */
+.strip{border-block:2.5px solid var(--m-line);background:var(--m-line);color:var(--paper);overflow:hidden;margin-top:.5rem}
+.strip .track{display:flex;white-space:nowrap;padding:.6rem 0;width:max-content;animation:scrollx 24s linear infinite;
+  font-family:'Fredoka',sans-serif;font-weight:600;font-size:1.05rem}
+.strip .track span{display:inline-flex;gap:1.6rem;align-items:center;padding-right:1.6rem}
+.strip .track .s{color:var(--pink)}
+@keyframes scrollx{to{transform:translateX(-50%)}}
 
-    .featured-info { display: flex; flex-direction: column; justify-content: center; position: relative; }
-    .featured-badges { display: flex; gap: 0.6rem; margin-bottom: 1.2rem; flex-wrap: wrap; }
-    .badge {
-      font-size: 0.7rem; padding: 0.3rem 0.75rem; border-radius: 100px;
-      white-space: nowrap; font-weight: 700; letter-spacing: 0.05em;
-    }
-    .badge-soon { background: rgba(99,102,241,0.14); color: #b3bcfd; border: 1px solid rgba(99,102,241,0.35); }
-    .badge-live { background: rgba(110,231,183,0.1); color: var(--mint); border: 1px solid rgba(110,231,183,0.3); }
-    .badge-beta { background: rgba(251,191,36,0.1); color: var(--amber); border: 1px solid rgba(251,191,36,0.3); }
+/* ============ SECTIONS ============ */
+section{padding:clamp(3.4rem,8vw,5.6rem) 0;position:relative}
 
-    .featured h3 { font-size: 1.75rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 0.9rem; }
-    .featured p { color: var(--muted); font-size: 0.98rem; line-height: 1.75; margin-bottom: 1.6rem; }
-    .featured p strong { color: #c7bffd; font-weight: 600; }
+/* PROJECTS */
+.proj-head-wrap{display:flex;align-items:flex-end;justify-content:space-between;gap:1.5rem;flex-wrap:wrap}
+.proj-guide{position:relative;flex:none;width:190px;display:grid;place-items:end center}
+.proj-guide .mascot{width:160px}
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:1.7rem;margin-top:1.2rem}
+.card{position:relative;background:var(--card);border:2.5px solid var(--m-line);border-radius:var(--r-lg);
+  padding:1.7rem 1.5rem 1.5rem;box-shadow:var(--shadow-s);transition:transform .28s var(--ease),box-shadow .28s;isolation:isolate}
+.card:nth-child(odd){transform:rotate(-.8deg)}
+.card:nth-child(even){transform:rotate(.7deg);margin-top:1.6rem}
+.card:hover{transform:rotate(0) translateY(-6px);box-shadow:var(--shadow-m)}
+.card .tag{position:absolute;top:-15px;left:22px;font-family:'Fredoka',sans-serif;font-weight:600;font-size:.76rem;
+  background:var(--accent,var(--pink));color:#fff;border:2.5px solid var(--m-line);border-radius:var(--r-pill);
+  padding:.28rem .85rem;box-shadow:var(--shadow-s)}
+.card .star-corner{position:absolute;top:-22px;right:-14px;width:56px;z-index:2;transform:rotate(12deg)}
+.card h3{font-size:1.45rem;margin:.5rem 0 .9rem;font-weight:600}
+.case{display:grid;gap:.55rem;margin-bottom:1rem}
+.case .row{display:grid;grid-template-columns:auto 1fr;gap:.6rem;align-items:start;font-size:.96rem}
+.case .lab{font-family:'Fredoka',sans-serif;font-weight:600;color:var(--accent,var(--pink));font-size:.78rem;
+  letter-spacing:.03em;text-transform:uppercase;padding-top:.15rem;white-space:nowrap}
+.tools{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.2rem}
+.tools span{font-weight:700;font-size:.78rem;background:var(--paper-2);border:1.5px solid var(--line);border-radius:9px;padding:.2rem .6rem}
+.result{display:flex;align-items:center;gap:.7rem;margin-top:1rem;padding:.75rem .85rem;background:var(--accent-soft,var(--pink-soft));
+  border-radius:var(--r);font-weight:700;font-size:.95rem}
+.result .marker{width:40px;height:40px;flex:none}
+/* character comment inside card */
+.card-say{display:flex;align-items:center;gap:.55rem;margin-top:.9rem}
+.card-say .buddy{width:56px;height:60px;flex:none}
+.card-say .say{position:relative;background:var(--accent-soft,var(--pink-soft));border:2.5px solid var(--m-line);
+  border-radius:16px;padding:.5rem .8rem;font-family:'Fredoka',sans-serif;font-weight:500;font-size:.86rem;line-height:1.35}
+.card-say .say::after{content:"";position:absolute;left:-11px;top:20px;width:0;height:0;border-style:solid;
+  border-width:7px 12px 7px 0;border-color:transparent var(--accent-soft,var(--pink-soft)) transparent transparent}
+.card-say .say::before{content:"";position:absolute;left:-15px;top:18px;width:0;height:0;border-style:solid;
+  border-width:9px 15px 9px 0;border-color:transparent var(--m-line) transparent transparent}
+.card.c1{--accent:var(--pink);--accent-soft:var(--pink-soft)}
+.card.c2{--accent:var(--mint);--accent-soft:var(--mint-soft)}
+.card.c3{--accent:var(--blue);--accent-soft:var(--blue-soft)}
+.card.c4{--accent:var(--lav);--accent-soft:var(--lav-soft)}
+/* app CTA row */
+.app-cta{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-top:1.1rem}
+.app-cta a{display:inline-flex;align-items:center;gap:.35rem;font-family:'Fredoka',sans-serif;font-weight:600;
+  font-size:.85rem;text-decoration:none;padding:.5rem 1.05rem;border-radius:var(--r-pill);border:2.5px solid var(--m-line);
+  background:var(--accent,var(--pink));color:#fff;box-shadow:var(--shadow-s);transition:transform .2s var(--ease)}
+.app-cta a:hover{transform:translateY(-2px)}
+.app-cta a.ghost{background:var(--card);color:var(--ink)}
+.app-badge{display:inline-flex;align-items:center;gap:.3rem;font-weight:700;font-size:.76rem;
+  background:var(--accent-soft,var(--pink-soft));border:2px solid var(--m-line);border-radius:var(--r-pill);padding:.4rem .75rem}
 
-    .feature-list { list-style: none; display: grid; gap: 0.55rem; margin-bottom: 2rem; }
-    .feature-list li { display: flex; gap: 0.65rem; align-items: baseline; color: var(--muted); font-size: 0.92rem; }
-    .feature-list li::before { content: '▹'; color: var(--indigo); font-weight: 700; }
+/* SKILLS */
+.skills-layout{display:grid;grid-template-columns:.82fr 1.18fr;gap:2.2rem;align-items:start}
+.skills-guide{position:sticky;top:92px;text-align:center}
+.skills-guide .mascot{width:min(280px,66vw)}
+.skills-guide .bubble{margin:1.2rem auto 0;max-width:18rem}
+.skill-groups{display:grid;gap:1.1rem}
+.sgroup{background:var(--card);border:2.5px solid var(--m-line);border-radius:var(--r);padding:1.2rem 1.35rem;
+  box-shadow:var(--shadow-s);transition:transform .25s var(--ease)}
+.sgroup:hover{transform:translateX(5px)}
+.sgroup .sg-head{display:flex;align-items:center;gap:.7rem;margin-bottom:.85rem}
+.sgroup .sg-ic{width:42px;height:42px;flex:none;display:grid;place-items:center;font-size:1.3rem;
+  border:2.5px solid var(--m-line);border-radius:14px;background:var(--sg,var(--pink-soft))}
+.sgroup h3{font-size:1.18rem;font-weight:600}
+.sgroup .lvl{margin-left:auto;font-family:'Fredoka',sans-serif;font-size:.72rem;font-weight:500;text-transform:uppercase;
+  letter-spacing:.05em;color:#fff;background:var(--m-line);padding:.15rem .6rem;border-radius:var(--r-pill)}
+.pills{display:flex;flex-wrap:wrap;gap:.45rem}
+.pills span{font-weight:700;font-size:.86rem;background:var(--paper-2);border:1.5px solid var(--line);border-radius:var(--r-pill);padding:.32rem .8rem}
 
-    .featured-actions { display: flex; gap: 0.9rem; flex-wrap: wrap; margin-bottom: 1.6rem; }
-    .apk-note { font-size: 0.78rem; color: var(--muted); opacity: 0.8; }
+/* ABOUT */
+.about-layout{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center}
+.about-card{background:var(--card);border:2.5px solid var(--m-line);border-radius:var(--r-lg);
+  padding:clamp(1.6rem,3vw,2.4rem);box-shadow:var(--shadow-m);position:relative}
+.about-card p{margin-bottom:1rem}
+.about-card p:last-child{margin-bottom:0}
+.about-card .lead{font-family:'Fredoka',sans-serif;font-size:1.3rem;font-weight:500}
+.about-visual{position:relative;display:grid;place-items:center;min-height:320px}
+.about-visual .hero-blob{background:radial-gradient(circle at 50% 45%,var(--lav-soft),transparent 62%)}
+.about-visual .bit-main{width:min(290px,66vw);position:relative;z-index:1}
+.about-bubble{position:absolute;top:0;left:-2%;z-index:3;transform:rotate(-2deg);max-width:14rem}
+.about-visual .friend.nimo{width:110px;top:6%;right:0;left:auto}
+.mini-stats{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.4rem}
+.mstat{flex:1;min-width:120px;background:var(--paper-2);border:2px solid var(--line);border-radius:var(--r);padding:.9rem 1rem}
+.mstat b{display:block;font-family:'Fredoka',sans-serif;font-size:1.8rem;color:var(--pink);line-height:1}
+.mstat span{font-size:.82rem;color:var(--ink-soft);font-weight:700}
 
-    .project-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; }
-    .project-tags span {
-      background: rgba(255,255,255,0.045); color: var(--muted);
-      border-radius: 7px; padding: 0.26rem 0.72rem;
-      font-size: 0.77rem; font-weight: 500;
-      border: 1px solid var(--border); transition: all .2s;
-    }
-    .featured:hover .project-tags span, .card:hover .project-tags span { border-color: rgba(129,140,248,0.28); color: #c7bffd; }
+/* CONTACT */
+.contact{padding-bottom:clamp(4rem,9vw,6.5rem)}
+.contact-card{position:relative;background:linear-gradient(140deg,var(--pink) 0%,var(--lav) 100%);color:#fff;
+  border:2.5px solid var(--m-line);border-radius:var(--r-lg);padding:clamp(2.2rem,5vw,3.4rem);overflow:hidden;box-shadow:var(--shadow-m)}
+[data-theme="dark"] .contact-card{color:#fff}
+.contact-card::after{content:"";position:absolute;right:-40px;bottom:-40px;width:220px;height:220px;
+  background:radial-gradient(circle,rgba(255,255,255,.5) 0%,transparent 68%);opacity:.6}
+.contact-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:2rem;align-items:center;position:relative;z-index:1}
+.contact-card .kicker{color:#fff;opacity:.9}
+.contact-card h2{font-size:clamp(1.9rem,4.6vw,3rem);margin:.2rem 0 .7rem;font-weight:700}
+.contact-card p{color:rgba(255,255,255,.92);max-width:38ch;margin-bottom:1.6rem}
+.contact-links{display:flex;flex-wrap:wrap;gap:.8rem}
+.btn-light{background:#fff;color:var(--pink);border-color:#fff}
+.btn-light:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(0,0,0,.28)}
+.btn-outline-l{background:transparent;color:#fff;border-color:rgba(255,255,255,.75)}
+.btn-outline-l:hover{transform:translateY(-3px);border-color:#fff;background:rgba(255,255,255,.12)}
+.contact-visual{display:grid;place-items:center}
+.contact-visual .mascot{width:min(230px,55vw)}
 
-    /* Phone-Mockup (pures CSS) */
-    .phone-wrap { display: flex; align-items: center; justify-content: center; perspective: 1200px; }
-    .phone {
-      width: 250px; height: 510px;
-      background: #0c0c16;
-      border: 1px solid rgba(255,255,255,0.14);
-      border-radius: 36px; padding: 12px;
-      box-shadow: 0 40px 90px rgba(0,0,0,0.55), 0 0 60px rgba(99,102,241,0.14), inset 0 0 0 2px rgba(255,255,255,0.04);
-      transform: rotateY(-9deg) rotateX(3deg);
-      transition: transform .5s cubic-bezier(.4,0,.2,1);
-      will-change: transform;
-    }
-    .featured:hover .phone { transform: rotateY(-3deg) rotateX(1deg) translateY(-6px); }
-    .phone-screen {
-      width: 100%; height: 100%;
-      background: linear-gradient(180deg, #12121f 0%, #0b0b14 100%);
-      border-radius: 26px; overflow: hidden;
-      display: flex; flex-direction: column;
-      position: relative;
-    }
-    .phone-notch {
-      width: 84px; height: 20px; background: #05050c;
-      border-radius: 0 0 14px 14px; margin: 0 auto; flex-shrink: 0;
-    }
-    .app-bar {
-      display: flex; align-items: center; gap: 0.55rem;
-      padding: 0.9rem 1.1rem 0.7rem;
-    }
-    .app-icon {
-      width: 30px; height: 30px; border-radius: 8px;
-      background: linear-gradient(135deg, #3d5a80, #293f57);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 0.85rem;
-    }
-    .app-bar b { font-size: 0.86rem; font-weight: 700; font-family: var(--font-display); }
-    .app-bar small { display: block; font-size: 0.6rem; color: var(--muted); font-weight: 500; }
+/* FOOTER */
+footer{border-top:2.5px solid var(--line);padding:2rem 0 3rem;text-align:center;color:var(--ink-soft);position:relative;z-index:1}
+footer .brand{justify-content:center;margin-bottom:.5rem}
+footer small{font-size:.85rem}
+footer .crew{display:inline-flex;gap:.3rem;align-items:center}
 
-    .report-card {
-      margin: 0.45rem 0.9rem; padding: 0.75rem 0.85rem;
-      background: rgba(255,255,255,0.045);
-      border: 1px solid rgba(255,255,255,0.07);
-      border-radius: 12px;
-    }
-    .report-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.45rem; }
-    .report-title { font-size: 0.68rem; font-weight: 700; }
-    .report-emoji { font-size: 0.72rem; }
-    .line { height: 5px; border-radius: 3px; background: rgba(255,255,255,0.1); margin-bottom: 0.35rem; }
-    .line.w80 { width: 80%; } .line.w60 { width: 60%; } .line.w90 { width: 90%; } .line.w50 { width: 50%; }
-    .report-meta { display: flex; gap: 0.4rem; margin-top: 0.5rem; }
-    .chip {
-      font-size: 0.53rem; padding: 0.14rem 0.5rem; border-radius: 100px;
-      background: rgba(99,102,241,0.16); color: #b3bcfd; font-weight: 600;
-    }
-    .chip.orange { background: rgba(249,115,22,0.16); color: #fdba74; }
-    .chip.green { background: rgba(110,231,183,0.12); color: var(--mint); }
+/* ============ REVEAL ============ */
+.js .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.js .reveal.visible{opacity:1;transform:none}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}
 
-    .phone-fab {
-      position: absolute; right: 16px; bottom: 18px;
-      width: 46px; height: 46px; border-radius: 15px;
-      background: linear-gradient(135deg, #f97316, #ea580c);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.25rem; color: #fff; font-weight: 800;
-      box-shadow: 0 8px 24px rgba(249,115,22,0.45);
-    }
-
-    /* ── PROJECT GRID (weitere Projekte) ── */
-    .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1.3rem; margin-top: 1.3rem; }
-    .card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 20px; padding: 2rem;
-      backdrop-filter: blur(16px);
-      transition: all .35s cubic-bezier(.4,0,.2,1);
-      position: relative; overflow: hidden;
-      display: flex; flex-direction: column; gap: 0.9rem;
-      text-decoration: none; color: inherit;
-    }
-    .card::before {
-      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
-      background: linear-gradient(90deg, var(--indigo), var(--violet), var(--cyan));
-      opacity: 0; transition: opacity .3s;
-    }
-    .card:hover { transform: translateY(-6px); border-color: var(--border-hi); box-shadow: 0 18px 56px rgba(99,102,241,0.14); }
-    .card:hover::before { opacity: 1; }
-    .card-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; }
-    .card h3 { font-size: 1.18rem; font-weight: 700; letter-spacing: -0.01em; }
-    .card p { color: var(--muted); font-size: 0.91rem; line-height: 1.7; flex-grow: 1; }
-    .card-link { font-size: 0.84rem; font-weight: 600; color: #b3bcfd; display: inline-flex; align-items: center; gap: 0.35rem; }
-    .card:hover .card-link { color: #dfe3ff; }
-
-    /* ── ABOUT ── */
-    .about-grid { display: grid; grid-template-columns: auto 1fr; gap: 2.6rem; align-items: start; }
-    .about-avatar {
-      width: 104px; height: 104px; border-radius: 28px;
-      background: linear-gradient(135deg, var(--indigo), var(--violet));
-      display: flex; align-items: center; justify-content: center;
-      font-family: var(--font-display); font-size: 2.6rem; font-weight: 700; color: #fff;
-      box-shadow: 0 16px 48px rgba(99,102,241,0.35);
-      position: relative;
-    }
-    .about-avatar::after {
-      content: ''; position: absolute; inset: -6px; border-radius: 32px;
-      border: 1px solid rgba(129,140,248,0.3);
-    }
-    .about-text p { color: var(--muted); font-size: 1.02rem; line-height: 1.85; margin-bottom: 1.1rem; }
-    .about-text p strong { color: #c7bffd; font-weight: 600; }
-    .about-text p:last-child { margin-bottom: 0; }
-
-    /* ── SKILLS ── */
-    .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 0.85rem; }
-    .skill-item {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: 14px; padding: 1.05rem 1.2rem;
-      display: flex; align-items: center; gap: 0.7rem;
-      font-size: 0.88rem; font-weight: 600;
-      backdrop-filter: blur(10px); transition: all .25s; cursor: default;
-    }
-    .skill-item:hover {
-      background: rgba(99,102,241,0.09); border-color: var(--border-hi);
-      transform: translateY(-3px);
-      box-shadow: 0 10px 28px rgba(99,102,241,0.16);
-    }
-    .skill-item .icon { font-size: 1.2rem; }
-
-    /* ── CONTACT ── */
-    .contact-card {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: 28px; padding: 4rem 2.5rem; text-align: center;
-      backdrop-filter: blur(20px); position: relative; overflow: hidden;
-    }
-    .contact-card::before {
-      content: ''; position: absolute; inset: 0;
-      background: radial-gradient(ellipse at 50% -10%, rgba(99,102,241,0.16), transparent 60%);
-      pointer-events: none;
-    }
-    .contact-card h3 { font-size: clamp(1.5rem, 3.4vw, 2rem); font-weight: 700; margin-bottom: 0.9rem; letter-spacing: -0.02em; }
-    .contact-card > p { color: var(--muted); margin-bottom: 2.3rem; font-size: 1rem; max-width: 460px; margin-left: auto; margin-right: auto; }
-    .contact-links { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; position: relative; }
-
-    /* ── FOOTER ── */
-    footer {
-      text-align: center; padding: 2.6rem;
-      color: var(--muted); font-size: 0.82rem;
-      border-top: 1px solid var(--border);
-      position: relative; z-index: 2;
-    }
-    footer .heart { color: #f472b6; }
-
-    /* ── ANIMATIONS ── */
-    @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-    .reveal { opacity: 0; transform: translateY(42px); transition: opacity .7s cubic-bezier(.4,0,.2,1), transform .7s cubic-bezier(.4,0,.2,1); }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-    .reveal-delay-1 { transition-delay: .08s; }
-    .reveal-delay-2 { transition-delay: .16s; }
-    .reveal-delay-3 { transition-delay: .24s; }
-
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
-      html { scroll-behavior: auto; }
-      .reveal { opacity: 1; transform: none; }
-    }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 860px) {
-      .featured { grid-template-columns: 1fr; padding: 2.2rem; gap: 2.4rem; }
-      .phone { transform: rotateY(0) rotateX(0); width: 220px; height: 450px; }
-      .cards { grid-template-columns: 1fr; }
-      .about-grid { grid-template-columns: 1fr; gap: 1.8rem; }
-    }
-    @media (max-width: 600px) {
-      nav { padding: 0.9rem 1.2rem; }
-      nav ul { gap: 1.1rem; }
-      nav ul a:not(.nav-cta) { font-size: 0.82rem; }
-      .hero { padding: 7rem 1.2rem 3.5rem; }
-      .hero-stats { gap: 1.8rem; }
-      section { padding: 4.2rem 1.2rem; }
-      .contact-card { padding: 2.6rem 1.4rem; }
-    }
-  </style>
+/* ============ RESPONSIVE ============ */
+@media(max-width:920px){
+  .hero-grid{grid-template-columns:1fr;gap:1rem}
+  .hero-visual{order:-1;min-height:300px}
+  .skills-layout{grid-template-columns:1fr}
+  .skills-guide{position:static;margin-bottom:1rem}
+  .about-layout{grid-template-columns:1fr}
+  .about-visual{order:-1}
+  .contact-grid{grid-template-columns:1fr}
+  .contact-visual{order:-1}
+}
+@media(max-width:680px){
+  .cards{grid-template-columns:1fr}
+  .card:nth-child(even){margin-top:0}
+  nav.menu a:not(.menu-keep){display:none}
+  .proj-guide{display:none}
+  .friend.nimo{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
+  .reveal{opacity:1;transform:none}
+}
+</style>
 </head>
 <body>
+<a href="#projekte" class="skip">Zum Inhalt springen</a>
 
-<!-- Hintergrund-Ebenen -->
-<div class="bg-grid"></div>
-<div class="bg-blobs">
-  <div class="blob blob-1"></div>
-  <div class="blob blob-2"></div>
-  <div class="blob blob-3"></div>
-</div>
-<div class="spotlight" id="spotlight"></div>
-
-<nav id="nav">
-  <a href="#" class="logo">Kevin<span>.dev</span></a>
-  <ul>
-    <li><a href="#projekte">Projekte</a></li>
-    <li><a href="#ueber">Über mich</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#kontakt" class="nav-cta">Kontakt</a></li>
-  </ul>
-</nav>
-
-<div class="wrap">
-
-  <!-- HERO -->
-  <div class="hero">
-    <div class="hero-eyebrow">Aktuell: BauLog in der offenen Testphase</div>
-    <h1>Ich baue Apps,<br>die <span class="grad">wirklich genutzt</span><br>werden.</h1>
-    <p class="hero-sub">
-      Hey, ich bin Kevin — <strong>App-Entwickler aus dem Odenwald</strong>.
-      Ich entwickle mobile Apps, die echte Probleme lösen. Meine erste App
-      hilft Handwerkern, ihre Baustellen-Doku in Minuten statt Stunden zu erledigen.
-    </p>
-    <div class="hero-btns">
-      <a href="https://kevinklepov.github.io/BauLog.apk" class="btn btn-primary">⬇ BauLog testen (Android)</a>
-      <a href="#projekte" class="btn btn-outline">Projekte ansehen</a>
-    </div>
-    <div class="hero-stats">
-      <div class="stat"><span class="stat-num">2</span><span class="stat-label">Apps gebaut</span></div>
-      <div class="stat"><span class="stat-num">100&thinsp;%</span><span class="stat-label">offline & werbefrei</span></div>
-      <div class="stat"><span class="stat-num">0&thinsp;€</span><span class="stat-label">für Tester — für immer</span></div>
-    </div>
+<!-- ============ HEADER ============ -->
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="brand" aria-label="Startseite Kevin Klepov">
+      <svg class="brand-mascot" viewBox="0 0 64 64" aria-hidden="true">
+        <circle cx="18" cy="20" r="9" fill="var(--m-body)" stroke="var(--m-line)" stroke-width="3"/>
+        <circle cx="46" cy="20" r="9" fill="var(--m-body)" stroke="var(--m-line)" stroke-width="3"/>
+        <rect x="12" y="18" width="40" height="38" rx="18" fill="var(--m-body)" stroke="var(--m-line)" stroke-width="3.5"/>
+        <circle cx="26" cy="36" r="3.4" fill="var(--m-line)"/><circle cx="38" cy="36" r="3.4" fill="var(--m-line)"/>
+        <ellipse cx="20" cy="42" rx="3.4" ry="2.1" fill="var(--m-blush)"/><ellipse cx="44" cy="42" rx="3.4" ry="2.1" fill="var(--m-blush)"/>
+        <path d="M29 41 q3 3 6 0" stroke="var(--m-line)" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+      </svg>
+      Kevin<b>.</b>
+    </a>
+    <nav class="menu" aria-label="Hauptnavigation">
+      <a href="#projekte">Projekte</a>
+      <a href="#apps">Apps</a>
+      <a href="#skills">Skills</a>
+      <a href="#ueber">Über mich</a>
+      <a href="#kontakt" class="menu-keep">Kontakt</a>
+      <button class="icon-btn" id="themeBtn" aria-label="Hell/Dunkel umschalten" title="Theme umschalten">
+        <span class="moon">☾</span><span class="sun">☀</span>
+      </button>
+    </nav>
   </div>
+</header>
 
-  <!-- TECH-MARQUEE -->
-  <div class="marquee" aria-hidden="true">
-    <div class="marquee-track">
-      <span>Flutter</span><span>Dart</span><span>SQLite</span><span>Android</span><span>PDF-Engine</span><span>Spracherkennung</span><span>Python</span><span>Firebase</span><span>JavaScript</span><span>UI Design</span><span>Git</span><span>AI-gestützte Entwicklung</span>
-      <span>Flutter</span><span>Dart</span><span>SQLite</span><span>Android</span><span>PDF-Engine</span><span>Spracherkennung</span><span>Python</span><span>Firebase</span><span>JavaScript</span><span>UI Design</span><span>Git</span><span>AI-gestützte Entwicklung</span>
-    </div>
-  </div>
+<main id="top">
 
-  <!-- PROJEKTE -->
-  <section id="projekte">
-    <div class="section-label reveal">Projekte</div>
-    <h2 class="reveal reveal-delay-1">Was ich gebaut habe</h2>
-    <p class="section-desc reveal reveal-delay-2">Aus echten Problemen entstehen echte Lösungen — hier sind meine.</p>
-
-    <!-- Featured: BauLog -->
-    <div class="featured reveal reveal-delay-3" id="baulog">
-      <div class="featured-info">
-        <div class="featured-badges">
-          <span class="badge badge-beta">Offene Testphase</span>
-          <span class="badge badge-soon">Bald im Play Store</span>
-        </div>
-        <h3>BauLog — Digitale Bautagesberichte</h3>
-        <p>
-          Handwerker und Bauleiter verlieren jeden Abend Zeit mit Papierkram.
-          BauLog macht daraus <strong>2–3 Minuten</strong>: Bericht direkt auf der
-          Baustelle ins Handy diktieren, fertig ist ein sauberes PDF mit eigenem Firmenkopf.
-        </p>
-        <ul class="feature-list">
-          <li>Bericht per Spracheingabe statt Zettelwirtschaft</li>
-          <li>Fotos mit Beschriftung, Wetter, Temperatur & Unterschrift</li>
-          <li>PDF-Export mit Firmenlogo — direkt teilbar</li>
-          <li>100 % offline: keine Cloud, kein Konto, kein Abo</li>
-        </ul>
-        <div class="featured-actions">
-          <a href="https://kevinklepov.github.io/BauLog.apk" class="btn btn-primary">⬇ APK herunterladen</a>
-        </div>
-        <p class="apk-note">Android · ca. 65 MB · kostenlos. Ich suche Betriebe, die BauLog im Alltag testen — Feedback willkommen!</p>
+<!-- ============ HERO ============ -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="wrap hero-grid">
+    <div class="hero-copy reveal">
+      <span class="eyebrow"><span class="dot"></span>Angehender Fachinformatiker</span>
+      <h1 id="hero-title">Hi, ich bin Kevin.<br>Ich bringe <span class="hl">Systeme</span> zum Laufen.</h1>
+      <p class="lede">23, aus Hessen. Ich <b>baue, verkabele und repariere</b> Rechner, Netzwerke und Setups — und bringe ihnen bei, sauber und stabil zu laufen. Jetzt auf dem Weg in die IT-Ausbildung.</p>
+      <div class="cta-row">
+        <a href="#projekte" class="btn btn-primary">Projekte ansehen ♥</a>
+        <a href="#kontakt" class="btn btn-ghost">Kontakt aufnehmen</a>
       </div>
-      <div class="phone-wrap">
-        <div class="phone">
-          <div class="phone-screen">
-            <div class="phone-notch"></div>
-            <div class="app-bar">
-              <div class="app-icon">📋</div>
-              <div><b>BauLog</b><small>Meine Berichte</small></div>
-            </div>
-            <div class="report-card">
-              <div class="report-top"><span class="report-title">Baustelle Musterweg 12</span><span class="report-emoji">☀️</span></div>
-              <div class="line w90"></div>
-              <div class="line w60"></div>
-              <div class="report-meta"><span class="chip">PDF ✓</span><span class="chip orange">3 Fotos</span><span class="chip green">Signiert</span></div>
-            </div>
-            <div class="report-card">
-              <div class="report-top"><span class="report-title">Sanierung Bahnhofstr.</span><span class="report-emoji">🌧️</span></div>
-              <div class="line w80"></div>
-              <div class="line w50"></div>
-              <div class="report-meta"><span class="chip">PDF ✓</span><span class="chip orange">7 Fotos</span></div>
-            </div>
-            <div class="report-card">
-              <div class="report-top"><span class="report-title">Rohbau Am Hang 4</span><span class="report-emoji">⛅</span></div>
-              <div class="line w90"></div>
-              <div class="line w60"></div>
-              <div class="report-meta"><span class="chip">Entwurf</span></div>
-            </div>
-            <div class="phone-fab">+</div>
+      <div class="facts" aria-label="Kurzprofil">
+        <span class="chip"><span class="em">🎀</span> 23 Jahre</span>
+        <span class="chip"><span class="em">📍</span> Hessen, DE</span>
+        <span class="chip"><span class="em">🛠️</span> PC-Bau & Support</span>
+        <span class="chip"><span class="em">🐍</span> Python-Basics</span>
+      </div>
+    </div>
+
+    <div class="hero-visual reveal d2">
+      <div class="hero-blob"></div>
+      <svg class="spark" style="top:12%;right:14%;width:26px" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0 C9 5 11 7 16 8 C11 9 9 11 8 16 C7 11 5 9 0 8 C5 7 7 5 8 0 Z" fill="currentColor"/></svg>
+      <svg class="spark s2" style="bottom:26%;right:6%;width:20px" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0 C9 5 11 7 16 8 C11 9 9 11 8 16 C7 11 5 9 0 8 C5 7 7 5 8 0 Z" fill="currentColor"/></svg>
+      <div class="bubble left hero-bubble">Kevin bringt <b>Systeme zum Laufen</b> — wir zeigen dir wie! <span class="emo">🎀</span></div>
+
+      <!-- NIMO (cloud friend) -->
+      <svg class="mascot float c friend nimo" viewBox="0 0 140 100" role="img" aria-label="Nimo, das Wölkchen, schwebt neben Kevin">
+        <g fill="var(--m-body)" stroke="var(--m-line)" stroke-width="4" stroke-linejoin="round">
+          <path d="M34 84 C16 84 12 60 30 55 C26 34 56 28 64 44 C74 28 104 34 100 54 C118 56 116 84 96 84 Z"/>
+        </g>
+        <circle class="eye" cx="54" cy="60" r="4.5" fill="var(--m-line)"/><circle class="eye e2" cx="76" cy="60" r="4.5" fill="var(--m-line)"/>
+        <ellipse cx="45" cy="68" rx="5" ry="3" fill="var(--m-blush)"/><ellipse cx="85" cy="68" rx="5" ry="3" fill="var(--m-blush)"/>
+        <path d="M60 68 q5 5 10 0" stroke="var(--m-line)" stroke-width="3" fill="none" stroke-linecap="round"/>
+      </svg>
+
+      <!-- STELLA (star friend) -->
+      <svg class="mascot float b friend stella" viewBox="0 0 100 100" role="img" aria-label="Stella, der Stern, winkt">
+        <path d="M50 8 L61 37 L92 38 L67 57 L76 88 L50 70 L24 88 L33 57 L8 38 L39 37 Z" fill="var(--yellow)" stroke="var(--m-line)" stroke-width="4.5" stroke-linejoin="round"/>
+        <circle class="eye" cx="41" cy="52" r="4.2" fill="var(--m-line)"/><circle class="eye e2" cx="59" cy="52" r="4.2" fill="var(--m-line)"/>
+        <ellipse cx="33" cy="59" rx="4.5" ry="2.8" fill="var(--m-blush)"/><ellipse cx="67" cy="59" rx="4.5" ry="2.8" fill="var(--m-blush)"/>
+        <path d="M44 59 q6 5 12 0" stroke="var(--m-line)" stroke-width="3" fill="none" stroke-linecap="round"/>
+      </svg>
+
+      <!-- BIT (main) waving -->
+      <svg class="mascot float bit-main" viewBox="0 0 220 230" role="img" aria-label="Bit, der Hauptcharakter, winkt zur Begrüßung">
+        <!-- floating heart -->
+        <g class="heart-bob"><path transform="translate(94,6) scale(1.3)" d="M12 21 C12 21 2 14 2 7 C2 3 5 1 8 1 C10 1 11.5 2.5 12 4 C12.5 2.5 14 1 16 1 C19 1 22 3 22 7 C22 14 12 21 12 21 Z" fill="var(--m-accent)" stroke="var(--m-line)" stroke-width="2.2" stroke-linejoin="round"/></g>
+        <g fill="none" stroke="var(--m-line)" stroke-width="4.8" stroke-linejoin="round" stroke-linecap="round">
+          <!-- ears -->
+          <circle cx="78" cy="86" r="17" fill="var(--m-body)"/>
+          <circle cx="142" cy="86" r="17" fill="var(--m-body)"/>
+          <!-- feet -->
+          <ellipse cx="90" cy="204" rx="16" ry="11" fill="var(--m-body)"/>
+          <ellipse cx="130" cy="204" rx="16" ry="11" fill="var(--m-body)"/>
+          <!-- left arm resting -->
+          <path d="M60 158 Q44 172 50 190" stroke-width="16"/>
+          <path d="M60 158 Q44 172 50 190" stroke="var(--m-body)" stroke-width="9.5"/>
+          <circle cx="50" cy="192" r="10" fill="var(--m-body)"/>
+          <!-- body -->
+          <rect x="54" y="82" width="112" height="118" rx="52" fill="var(--m-body)"/>
+          <!-- bow on right ear -->
+          <path d="M150 72 l14 -9 v18 z" fill="var(--m-accent)"/>
+          <path d="M150 72 l-14 -9 v18 z" fill="var(--m-accent)"/>
+          <circle cx="150" cy="72" r="4.5" fill="var(--m-accent)"/>
+          <!-- eyes -->
+          <circle class="eye" cx="88" cy="134" r="10.5" fill="var(--m-line)" stroke="none"/>
+          <circle class="eye e2" cx="132" cy="134" r="10.5" fill="var(--m-line)" stroke="none"/>
+          <circle cx="92" cy="130" r="3.2" fill="#fff" stroke="none"/>
+          <circle cx="136" cy="130" r="3.2" fill="#fff" stroke="none"/>
+          <!-- cheeks -->
+          <ellipse cx="70" cy="150" rx="10" ry="6" fill="var(--m-blush)" stroke="none"/>
+          <ellipse cx="150" cy="150" rx="10" ry="6" fill="var(--m-blush)" stroke="none"/>
+          <!-- mouth -->
+          <path d="M104 150 q6 7 12 0" stroke-width="4.2"/>
+          <!-- right arm waving -->
+          <g class="wave-arm">
+            <path d="M160 152 Q186 138 186 108" stroke-width="16"/>
+            <path d="M160 152 Q186 138 186 108" stroke="var(--m-body)" stroke-width="9.5"/>
+            <circle cx="186" cy="104" r="11" fill="var(--m-body)"/>
+          </g>
+        </g>
+      </svg>
+      <span class="hero-badge">offen für Ausbildung 2026 ✦</span>
+    </div>
+  </div>
+</section>
+
+<!-- STRIP -->
+<div class="strip" aria-hidden="true">
+  <div class="track">
+    <span>PC-Bau <i class="s">♡</i> Troubleshooting <i class="s">♡</i> Windows <i class="s">♡</i> Netzwerke <i class="s">♡</i> Hardware <i class="s">♡</i> Audio-Routing <i class="s">♡</i> Streaming <i class="s">♡</i> IT-Support <i class="s">♡</i> Python <i class="s">♡</i></span>
+    <span>PC-Bau <i class="s">♡</i> Troubleshooting <i class="s">♡</i> Windows <i class="s">♡</i> Netzwerke <i class="s">♡</i> Hardware <i class="s">♡</i> Audio-Routing <i class="s">♡</i> Streaming <i class="s">♡</i> IT-Support <i class="s">♡</i> Python <i class="s">♡</i></span>
+  </div>
+</div>
+
+<!-- ============ PROJEKTE ============ -->
+<section id="projekte" aria-labelledby="proj-title">
+  <div class="wrap">
+    <div class="proj-head-wrap reveal">
+      <div class="section-head" style="margin-bottom:0">
+        <span class="kicker">01 — Projekte</span>
+        <h2 id="proj-title">Was ich schon <span class="hl mint">gebaut & gerettet</span> habe</h2>
+        <p>Keine Theorie — echte Setups aus meinem Alltag, jeweils als kleine Case Study: Problem, Lösung, Ergebnis. Stella markiert die Highlights ⭐</p>
+      </div>
+      <div class="proj-guide" aria-hidden="true">
+        <div class="bubble down" style="transform:rotate(-2deg);margin-bottom:.5rem">Wir verraten dir bei jedem Projekt das <b>Highlight</b> <span class="emo">👇</span></div>
+        <!-- BIT pointing down -->
+        <svg class="mascot float b" viewBox="0 0 180 190" role="img" aria-label="Bit zeigt auf die Projektkarten">
+          <g class="heart-bob"><path transform="translate(72,4) scale(1)" d="M12 21 C12 21 2 14 2 7 C2 3 5 1 8 1 C10 1 11.5 2.5 12 4 C12.5 2.5 14 1 16 1 C19 1 22 3 22 7 C22 14 12 21 12 21 Z" fill="var(--mint)" stroke="var(--m-line)" stroke-width="2.2" stroke-linejoin="round"/></g>
+          <g fill="none" stroke="var(--m-line)" stroke-width="4.5" stroke-linejoin="round" stroke-linecap="round">
+            <circle cx="62" cy="70" r="14" fill="var(--m-body)"/>
+            <circle cx="118" cy="70" r="14" fill="var(--m-body)"/>
+            <ellipse cx="74" cy="172" rx="13" ry="9" fill="var(--m-body)"/>
+            <ellipse cx="108" cy="172" rx="13" ry="9" fill="var(--m-body)"/>
+            <path d="M48 130 Q34 146 40 164" stroke-width="14"/>
+            <path d="M48 130 Q34 146 40 164" stroke="var(--m-body)" stroke-width="8.5"/>
+            <circle cx="40" cy="166" r="9" fill="var(--m-body)"/>
+            <rect x="44" y="66" width="92" height="102" rx="44" fill="var(--m-body)"/>
+            <circle class="eye" cx="72" cy="112" r="9" fill="var(--m-line)" stroke="none"/>
+            <circle class="eye e2" cx="108" cy="112" r="9" fill="var(--m-line)" stroke="none"/>
+            <circle cx="75" cy="109" r="2.8" fill="#fff" stroke="none"/><circle cx="111" cy="109" r="2.8" fill="#fff" stroke="none"/>
+            <ellipse cx="58" cy="126" rx="8" ry="5" fill="var(--m-blush)" stroke="none"/>
+            <ellipse cx="122" cy="126" rx="8" ry="5" fill="var(--m-blush)" stroke="none"/>
+            <path d="M84 126 q6 6 12 0" stroke-width="4"/>
+            <!-- right arm pointing down -->
+            <path d="M136 132 Q150 154 140 174" stroke-width="14"/>
+            <path d="M136 132 Q150 154 140 174" stroke="var(--m-body)" stroke-width="8.5"/>
+            <circle cx="140" cy="176" r="9" fill="var(--m-body)"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+
+    <div class="cards">
+      <!-- P1 -->
+      <article class="card c1 reveal d1">
+        <span class="tag">Hardware</span>
+        <svg class="star-corner" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 8 L61 37 L92 38 L67 57 L76 88 L50 70 L24 88 L33 57 L8 38 L39 37 Z" fill="var(--pink)" stroke="var(--m-line)" stroke-width="5" stroke-linejoin="round"/><circle cx="41" cy="52" r="4.2" fill="var(--m-line)"/><circle cx="59" cy="52" r="4.2" fill="var(--m-line)"/><path d="M44 59 q6 5 12 0" stroke="var(--m-line)" stroke-width="3" fill="none" stroke-linecap="round"/></svg>
+        <h3>Custom Gaming-PC im Budget</h3>
+        <div class="case">
+          <div class="row"><span class="lab">Problem</span><span>Leistungsstarker, aber leiser Rechner fürs Gaming & Streaming — mit begrenztem Budget.</span></div>
+          <div class="row"><span class="lab">Lösung</span><span>Komponenten aufeinander abgestimmt, sauber verbaut, Kabelmanagement, BIOS/UEFI eingerichtet, Windows + Treiber sauber installiert.</span></div>
+          <div class="tools"><span>CPU/GPU-Matching</span><span>UEFI/BIOS</span><span>Kabelmanagement</span><span>Windows 11</span></div>
+        </div>
+        <div class="result">
+          <svg class="marker" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 12 L60 38 L88 39 L66 56 L74 84 L50 68 L26 84 L34 56 L12 39 L40 38 Z" fill="var(--pink)" stroke="var(--m-line)" stroke-width="5" stroke-linejoin="round"/><circle cx="42" cy="52" r="4" fill="var(--m-line)"/><circle cx="58" cy="52" r="4" fill="var(--m-line)"/><path d="M45 58 q5 5 10 0" stroke="var(--m-line)" stroke-width="3" fill="none" stroke-linecap="round"/></svg>
+          <span>Ergebnis: stabiles System, niedrige Temps, flüsterleise unter Last.</span>
+        </div>
+        <div class="card-say" aria-hidden="true">
+          <svg class="mascot buddy" viewBox="0 0 64 72"><circle cx="18" cy="24" r="10" fill="var(--m-body)" stroke="var(--m-line)" stroke-width="3.2"/><circle cx="46" cy="24" r="10" fill="var(--m-body)" stroke="var(--m-line)" stroke-width="3.2"/><rect x="10" y="22" width="44" height="44" rx="21" fill="var(--m-body)" stroke="var(--m-line)" stroke-width="3.5"/><path d="M46 17 l10 -6 v13 z" fill="var(--accent)" stroke="var(--m-line)" stroke-width="2" stroke-linejoin="round"/><path d="M46 17 l-10 -6 v13 z" fill="var(--accent)" stroke="var(--m-line)" stroke-width="2" stroke-linejoin="round"/><circle cx="46" cy="17.5" r="3.4" fill="var(--accent)" stroke="var(--m-line)" stroke-width="2"/><circle class="eye" cx="25" cy="42" r="4" fill="var(--m-line)"/><circle class="eye e2" cx="39" cy="42" r="4" fill="var(--m-line)"/><ellipse cx="18" cy="49" rx="4" ry="2.4" fill="var(--m-blush)"/><ellipse cx="46" cy="49" rx="4" ry="2.4" fill="var(--m-blush)"/><path d="M28 49 q4 4 8 0" stroke="var(--m-line)" stroke-width="2.6" fill="none" stroke-linecap="round"/></svg>
+          <span class="say">„Flüsterleise unter Volllast" — <b>das</b> ist mein Lieblingsteil! 🤫</span>
+        </div>
+      </article>
+
+      <!-- P2 -->
+      <article class="card c2 reveal d2">
+        <span class="tag">Netzwerk</span>
+        <svg class="star-corner" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 8 L61 37 L92 38 L67 57 L76 88 L50 70 L24 88 L33 57 L8 38 L39 37 Z" fill="var(--mint)" stroke="var(--m-line)" stroke-width="5" stroke-linejoin="round"/><circle cx="41" cy="52" r="4.2" fill="var(--m-line)"/><circle cx="59" cy="52" r="4.2" fill="var(--m-line)"/><path d="M44 59 q6 5 12 0" stroke="var(--m-line)" stroke-width="3" fill="none" stroke-linecap="round"/></svg>
+        <h3>Heimnetz & WLAN ohne tote Zonen</h3>
+        <div class="case">
+          <div class="row"><span class="lab">Problem</span><span>Schwaches WLAN, Funklöcher in mehreren Räumen, instabile Verbindungen beim Zocken.</span></div>
+          <div class="row"><span class="lab">Lösung</span><span>Router neu konfiguriert, Funkkanäle optimiert, Mesh/Repeater platziert, feste IP-Adressen & Portfreigaben für Konsole und PC.</span></div>
+          <div class="tools"><span>Router-Admin</span><span>WLAN-Kanäle</span><span>Mesh/Repeater</span><span>Statische IPs</span></div>
+        </div>
+        <div class="result">
+          <svg class="marker" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 12 L60 38 L88 39 L66 56 L74 84 L50 68 L26 84 L34 56 L12 39 L40 38 Z" fill="var(--mint)" stroke="var(--m-line)" stroke-width="5" stroke-linejoin="round"/><circle cx="42" cy="52" r="4" fill="var(--m-line)"/><circle cx="58" cy="52" r="4" fill="var(--m-line)"/><path d="M45 58 q5 5 10 0" stroke="var(--m-line)" stroke-width="3" fill="none" stroke-linecap="round"/></svg>
+          <span>Ergebnis: stabile Abdeckung im ganzen Haus, kein Lag mehr.</span>
+        </div>
+        <div class="card-say" aria-hidden="true">
+          <svg class="mascot buddy" viewBox="0 0 64 72"><circle cx="18" cy="24" r="10" fill="var(--m-body)" stroke="var(--m-line)" stroke-width="3.2"/><circle cx="46" cy="24" r="10" fill="var(--m-body)" stroke="var(--m-line)" stroke-width="3.2"/><rect x="10" y="22" width="44" height="44" rx="21" fill="var(--m-body)" stroke="var(--m-line)" stroke-width="3.5"/><path d="M46 17 l10 -6 v13 z" fill="var(--accent)" stroke="var(--m-line)" stroke-width="2" stroke-linejoin="round"/><path d="M46 17 l-10 -6 v13 z" fill="var(--accent)" stroke="var(--m-line)" stroke-width="2" stroke-linejoin="round"/><circle cx="46" cy="17.5" r="3.4" fill="var(--accent)" stroke="var(--m-line)" stroke-width="2"/><circle class="eye" cx="25" cy="42" r="4" fill="var(--m-line)"/><circle class="eye e2" cx="39" cy="42" r="4" fill="var(--m-line)"/><ellipse cx="18" cy="49" rx="4" ry="2.4" fill="var(--m-blush)"/><ellipse cx="46" cy="49" rx="4" ry="2.4" fill="var(--m-blush)"/><path d="M28 49 q4 4 8 0" stroke="var(--m-line)" stroke-width="2.6" fill="none" stroke-linecap="round"/></svg>
+          <span class="say"><b>Kein Lag</b> mehr beim Zocken — endlich Ruhe im WLAN! 🎮</span>
+        </div>
+      </article>
+
+      <!-- P3 -->
+      <article class="card c3 reveal d1">
+        <span class="tag">Audio & Stream</span>
+        <svg class="star-corner" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 8 L61 37 L92 38 L67 57 L76 88 L50 70 L24 88 L33 57 L8 38 L39 37 Z" fill="var(--blue)" stroke="var(--m-line)" stroke-width="5" stroke-linejoin="round"/><circle cx="41" cy="52" r="4.2" fill="var(--m-line)"/><circle cx="59" cy="52" r="4.2" fill="var(--m-line)"/><path d="M44 59 q6 5 12 0" stroke="var(--m-line)" stroke-width="3" fill="none" stroke-linecap="round"/></svg>
+        <h3>Sauberes Streaming- & Audio-Setup</h3>
+        <div class="case">
+          <div class="row"><span class="lab">Problem</span><span>Klarer Ton und ruckelfreies Streaming — Mikro, Spielsound und Musik ohne Kabelsalat und Störgeräusche.</span></div>
+          <div class="row"><span class="lab">Lösung</span><span>OBS mit sauberen Szenen aufgesetzt, Audio-Routing über Interface/virtuelle Kanäle getrennt, Bitraten & Encoder auf die Hardware abgestimmt.</span></div>
+          <div class="tools"><span>OBS Studio</span><span>Audio-Routing</span><span>Mikrofon/Interface</span><span>Encoder-Tuning</span></div>
+        </div>
+        <div class="result">
+          <svg class="marker" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 12 L60 38 L88 39 L66 56 L74 84 L50 68 L26 84 L34 56 L12 39 L40 38 Z" fill="var(--blue)" stroke="var(--m-line)" stroke-width="5" stroke-linejoin="round"/><circle cx="42" cy="52" r="4" fill="var(--m-line)"/><circle cx="58" cy="52" r="4" fill="var(--m-line)"/><path d="M45 58 q5 5 10 0" stroke="var(--m-line)" stroke-width="3" fill="none" stroke-linecap="round"/></svg>
+          <span>Ergebnis: professioneller Stream, klarer Ton, null Ruckler.</span>
+        </div>
+        <div class="card-say" aria-hidden="true">
+          <svg class="mascot buddy" viewBox="0 0 64 72"><circle cx="18" cy="24" r="10" fill="var(--m-body)" stroke="var(--m-line)" stroke-width="3.2"/><circle cx="46" cy="24" r="10" fill="var(--m-body)" stroke="var(--m-line)" stroke-width="3.2"/><rect x="10" y="22" width="44" height="44" rx="21" fill="var(--m-body)" stroke="var(--m-line)" stroke-width="3.5"/><path d="M46 17 l10 -6 v13 z" fill="var(--accent)" stroke="var(--m-line)" stroke-width="2" stroke-linejoin="round"/><path d="M46 17 l-10 -6 v13 z" fill="var(--accent)" stroke="var(--m-line)" stroke-width="2" stroke-linejoin="round"/><circle cx="46" cy="17.5" r="3.4" fill="var(--accent)" stroke="var(--m-line)" stroke-width="2"/><circle class="eye" cx="25" cy="42" r="4" fill="var(--m-line)"/><circle class="eye e2" cx="39" cy="42" r="4" fill="var(--m-line)"/><ellipse cx="18" cy="49" rx="4" ry="2.4" fill="var(--m-blush)"/><ellipse cx="46" cy="49" rx="4" ry="2.4" fill="var(--m-blush)"/><path d="M28 49 q4 4 8 0" stroke="var(--m-line)" stroke-width="2.6" fill="none" stroke-linecap="round"/></svg>
+          <span class="say"><b>Klarer Ton, null Ruckler</b> — da hör ich ganz genau hin! 🎧</span>
+        </div>
+      </article>
+
+      <!-- P4 -->
+      <article class="card c4 reveal d2">
+        <span class="tag">IT-Support</span>
+        <svg class="star-corner" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 8 L61 37 L92 38 L67 57 L76 88 L50 70 L24 88 L33 57 L8 38 L39 37 Z" fill="var(--lav)" stroke="var(--m-line)" stroke-width="5" stroke-linejoin="round"/><circle cx="41" cy="52" r="4.2" fill="var(--m-line)"/><circle cx="59" cy="52" r="4.2" fill="var(--m-line)"/><path d="M44 59 q6 5 12 0" stroke="var(--m-line)" stroke-width="3" fill="none" stroke-linecap="round"/></svg>
+        <h3>Troubleshooting & PC-Rettung</h3>
+        <div class="case">
+          <div class="row"><span class="lab">Problem</span><span>Rechner von Freunden & Familie: Bluescreens, lahme Systeme, Boot-Probleme, Viren.</span></div>
+          <div class="row"><span class="lab">Lösung</span><span>Systematische Diagnose (Ereignisanzeige, Hardware-Checks), Treiber- & Komponententausch, Bereinigung oder saubere Neuinstallation inkl. Datensicherung.</span></div>
+          <div class="tools"><span>Fehlerdiagnose</span><span>Ereignisanzeige</span><span>Neuinstallation</span><span>Backup</span></div>
+        </div>
+        <div class="result">
+          <svg class="marker" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 12 L60 38 L88 39 L66 56 L74 84 L50 68 L26 84 L34 56 L12 39 L40 38 Z" fill="var(--lav)" stroke="var(--m-line)" stroke-width="5" stroke-linejoin="round"/><circle cx="42" cy="52" r="4" fill="var(--m-line)"/><circle cx="58" cy="52" r="4" fill="var(--m-line)"/><path d="M45 58 q5 5 10 0" stroke="var(--m-line)" stroke-width="3" fill="none" stroke-linecap="round"/></svg>
+          <span>Ergebnis: viele Rechner wieder flott — statt teurer Neukauf.</span>
+        </div>
+        <div class="card-say" aria-hidden="true">
+          <svg class="mascot buddy" viewBox="0 0 64 72"><circle cx="18" cy="24" r="10" fill="var(--m-body)" stroke="var(--m-line)" stroke-width="3.2"/><circle cx="46" cy="24" r="10" fill="var(--m-body)" stroke="var(--m-line)" stroke-width="3.2"/><rect x="10" y="22" width="44" height="44" rx="21" fill="var(--m-body)" stroke="var(--m-line)" stroke-width="3.5"/><path d="M46 17 l10 -6 v13 z" fill="var(--accent)" stroke="var(--m-line)" stroke-width="2" stroke-linejoin="round"/><path d="M46 17 l-10 -6 v13 z" fill="var(--accent)" stroke="var(--m-line)" stroke-width="2" stroke-linejoin="round"/><circle cx="46" cy="17.5" r="3.4" fill="var(--accent)" stroke="var(--m-line)" stroke-width="2"/><circle class="eye" cx="25" cy="42" r="4" fill="var(--m-line)"/><circle class="eye e2" cx="39" cy="42" r="4" fill="var(--m-line)"/><ellipse cx="18" cy="49" rx="4" ry="2.4" fill="var(--m-blush)"/><ellipse cx="46" cy="49" rx="4" ry="2.4" fill="var(--m-blush)"/><path d="M28 49 q4 4 8 0" stroke="var(--m-line)" stroke-width="2.6" fill="none" stroke-linecap="round"/></svg>
+          <span class="say"><b>Statt teurer Neukauf</b> — Reparieren ist Kevins Superkraft! 💪</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ APPS ============ -->
+<section id="apps" aria-labelledby="apps-title">
+  <div class="wrap">
+    <div class="proj-head-wrap reveal">
+      <div class="section-head" style="margin-bottom:0">
+        <span class="kicker">02 — Apps</span>
+        <h2 id="apps-title">Apps, die ich <span class="hl lav">selbst gebaut</span> habe</h2>
+        <p>Von der Idee bis zum Live-Deployment — drei eigene Apps, die man direkt ausprobieren kann. Nicht nur Hardware, auch Software. 💻</p>
+      </div>
+      <div class="proj-guide" aria-hidden="true">
+        <div class="bubble down" style="transform:rotate(-2deg);margin-bottom:.5rem">Alle drei sind <b>live</b> — klick dich rein! <span class="emo">✨</span></div>
+        <svg class="mascot float b" viewBox="0 0 180 190" role="img" aria-label="Bit zeigt auf die Apps">
+          <g class="heart-bob"><path transform="translate(72,4) scale(1)" d="M12 21 C12 21 2 14 2 7 C2 3 5 1 8 1 C10 1 11.5 2.5 12 4 C12.5 2.5 14 1 16 1 C19 1 22 3 22 7 C22 14 12 21 12 21 Z" fill="var(--lav)" stroke="var(--m-line)" stroke-width="2.2" stroke-linejoin="round"/></g>
+          <g fill="none" stroke="var(--m-line)" stroke-width="4.5" stroke-linejoin="round" stroke-linecap="round">
+            <circle cx="62" cy="70" r="14" fill="var(--m-body)"/>
+            <circle cx="118" cy="70" r="14" fill="var(--m-body)"/>
+            <ellipse cx="74" cy="172" rx="13" ry="9" fill="var(--m-body)"/>
+            <ellipse cx="108" cy="172" rx="13" ry="9" fill="var(--m-body)"/>
+            <path d="M48 130 Q34 146 40 164" stroke-width="14"/>
+            <path d="M48 130 Q34 146 40 164" stroke="var(--m-body)" stroke-width="8.5"/>
+            <circle cx="40" cy="166" r="9" fill="var(--m-body)"/>
+            <rect x="44" y="66" width="92" height="102" rx="44" fill="var(--m-body)"/>
+            <circle class="eye" cx="72" cy="112" r="9" fill="var(--m-line)" stroke="none"/>
+            <circle class="eye e2" cx="108" cy="112" r="9" fill="var(--m-line)" stroke="none"/>
+            <circle cx="75" cy="109" r="2.8" fill="#fff" stroke="none"/><circle cx="111" cy="109" r="2.8" fill="#fff" stroke="none"/>
+            <ellipse cx="58" cy="126" rx="8" ry="5" fill="var(--m-blush)" stroke="none"/>
+            <ellipse cx="122" cy="126" rx="8" ry="5" fill="var(--m-blush)" stroke="none"/>
+            <path d="M84 126 q6 6 12 0" stroke-width="4"/>
+            <path d="M136 132 Q150 154 140 174" stroke-width="14"/>
+            <path d="M136 132 Q150 154 140 174" stroke="var(--m-body)" stroke-width="8.5"/>
+            <circle cx="140" cy="176" r="9" fill="var(--m-body)"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+
+    <div class="cards">
+      <!-- BauLog -->
+      <article class="card c1 reveal d1">
+        <span class="tag">Mobile App</span>
+        <svg class="star-corner" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 8 L61 37 L92 38 L67 57 L76 88 L50 70 L24 88 L33 57 L8 38 L39 37 Z" fill="var(--accent)" stroke="var(--m-line)" stroke-width="5" stroke-linejoin="round"/><circle cx="41" cy="52" r="4.2" fill="var(--m-line)"/><circle cx="59" cy="52" r="4.2" fill="var(--m-line)"/><path d="M44 59 q6 5 12 0" stroke="var(--m-line)" stroke-width="3" fill="none" stroke-linecap="round"/></svg>
+        <h3>BauLog</h3>
+        <p style="color:var(--ink-soft);font-size:.96rem;margin-bottom:.7rem">Digitale Bautagesberichte für Handwerker: in Minuten einen vollständigen Bericht erstellen, als PDF exportieren und teilen — mit Diktierfunktion, Fotos und komplett offline.</p>
+        <div class="tools"><span>Flutter</span><span>Dart</span><span>SQLite</span><span>PDF-Export</span><span>Spracherkennung</span></div>
+        <div class="app-cta">
+          <a href="https://kevinklepov.github.io/BauLog.apk" target="_blank" rel="noopener">APK laden ↓</a>
+          <span class="app-badge">✦ bald im Play Store</span>
+        </div>
+        <div class="card-say" aria-hidden="true">
+          <svg class="mascot buddy" viewBox="0 0 64 72"><circle cx="18" cy="24" r="10" fill="var(--m-body)" stroke="var(--m-line)" stroke-width="3.2"/><circle cx="46" cy="24" r="10" fill="var(--m-body)" stroke="var(--m-line)" stroke-width="3.2"/><rect x="10" y="22" width="44" height="44" rx="21" fill="var(--m-body)" stroke="var(--m-line)" stroke-width="3.5"/><path d="M46 17 l10 -6 v13 z" fill="var(--accent)" stroke="var(--m-line)" stroke-width="2" stroke-linejoin="round"/><path d="M46 17 l-10 -6 v13 z" fill="var(--accent)" stroke="var(--m-line)" stroke-width="2" stroke-linejoin="round"/><circle cx="46" cy="17.5" r="3.4" fill="var(--accent)" stroke="var(--m-line)" stroke-width="2"/><circle class="eye" cx="25" cy="42" r="4" fill="var(--m-line)"/><circle class="eye e2" cx="39" cy="42" r="4" fill="var(--m-line)"/><ellipse cx="18" cy="49" rx="4" ry="2.4" fill="var(--m-blush)"/><ellipse cx="46" cy="49" rx="4" ry="2.4" fill="var(--m-blush)"/><path d="M28 49 q4 4 8 0" stroke="var(--m-line)" stroke-width="2.6" fill="none" stroke-linecap="round"/></svg>
+          <span class="say">Spart Handwerkern täglich den <b>Papierkram</b> — Kevins erstes echtes Produkt! 🏗️</span>
+        </div>
+      </article>
+
+      <!-- einig -->
+      <article class="card c2 reveal d2">
+        <span class="tag">Web-App</span>
+        <svg class="star-corner" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 8 L61 37 L92 38 L67 57 L76 88 L50 70 L24 88 L33 57 L8 38 L39 37 Z" fill="var(--accent)" stroke="var(--m-line)" stroke-width="5" stroke-linejoin="round"/><circle cx="41" cy="52" r="4.2" fill="var(--m-line)"/><circle cx="59" cy="52" r="4.2" fill="var(--m-line)"/><path d="M44 59 q6 5 12 0" stroke="var(--m-line)" stroke-width="3" fill="none" stroke-linecap="round"/></svg>
+        <h3>einig</h3>
+        <p style="color:var(--ink-soft);font-size:.96rem;margin-bottom:.7rem">Gruppenentscheidungen ohne Drama: Frage erstellen, Link teilen, alle voten — fertig. Kein Account, keine Installation, live im Browser.</p>
+        <div class="tools"><span>JavaScript</span><span>Firebase</span><span>HTML/CSS</span><span>Realtime</span></div>
+        <div class="app-cta">
+          <a href="https://kevinklepov.github.io/einig/" target="_blank" rel="noopener">Live ausprobieren ↗</a>
+        </div>
+        <div class="card-say" aria-hidden="true">
+          <svg class="mascot buddy" viewBox="0 0 64 72"><circle cx="18" cy="24" r="10" fill="var(--m-body)" stroke="var(--m-line)" stroke-width="3.2"/><circle cx="46" cy="24" r="10" fill="var(--m-body)" stroke="var(--m-line)" stroke-width="3.2"/><rect x="10" y="22" width="44" height="44" rx="21" fill="var(--m-body)" stroke="var(--m-line)" stroke-width="3.5"/><path d="M46 17 l10 -6 v13 z" fill="var(--accent)" stroke="var(--m-line)" stroke-width="2" stroke-linejoin="round"/><path d="M46 17 l-10 -6 v13 z" fill="var(--accent)" stroke="var(--m-line)" stroke-width="2" stroke-linejoin="round"/><circle cx="46" cy="17.5" r="3.4" fill="var(--accent)" stroke="var(--m-line)" stroke-width="2"/><circle class="eye" cx="25" cy="42" r="4" fill="var(--m-line)"/><circle class="eye e2" cx="39" cy="42" r="4" fill="var(--m-line)"/><ellipse cx="18" cy="49" rx="4" ry="2.4" fill="var(--m-blush)"/><ellipse cx="46" cy="49" rx="4" ry="2.4" fill="var(--m-blush)"/><path d="M28 49 q4 4 8 0" stroke="var(--m-line)" stroke-width="2.6" fill="none" stroke-linecap="round"/></svg>
+          <span class="say">„Wo essen wir?" — endlich ohne <b>20 Chat-Nachrichten</b> geklärt! 🗳️</span>
+        </div>
+      </article>
+
+      <!-- KingsCup -->
+      <article class="card c3 reveal d1">
+        <span class="tag">Partyspiel</span>
+        <svg class="star-corner" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 8 L61 37 L92 38 L67 57 L76 88 L50 70 L24 88 L33 57 L8 38 L39 37 Z" fill="var(--accent)" stroke="var(--m-line)" stroke-width="5" stroke-linejoin="round"/><circle cx="41" cy="52" r="4.2" fill="var(--m-line)"/><circle cx="59" cy="52" r="4.2" fill="var(--m-line)"/><path d="M44 59 q6 5 12 0" stroke="var(--m-line)" stroke-width="3" fill="none" stroke-linecap="round"/></svg>
+        <h3>KingsCup</h3>
+        <p style="color:var(--ink-soft);font-size:.96rem;margin-bottom:.7rem">Das Kings-Cup-Kartenspiel für den Abend mit Freunden — synchron auf allen Handys, direkt per Peer-to-Peer verbunden, ganz ohne Server.</p>
+        <div class="tools"><span>React</span><span>Vite</span><span>PeerJS</span><span>WebRTC (P2P)</span></div>
+        <div class="app-cta">
+          <a href="https://kevinklepov.github.io/KingsCup/" target="_blank" rel="noopener">Jetzt spielen ↗</a>
+          <a class="ghost" href="https://github.com/KevinKlepov/KingsCup" target="_blank" rel="noopener">Code ansehen</a>
+        </div>
+        <div class="card-say" aria-hidden="true">
+          <svg class="mascot buddy" viewBox="0 0 64 72"><circle cx="18" cy="24" r="10" fill="var(--m-body)" stroke="var(--m-line)" stroke-width="3.2"/><circle cx="46" cy="24" r="10" fill="var(--m-body)" stroke="var(--m-line)" stroke-width="3.2"/><rect x="10" y="22" width="44" height="44" rx="21" fill="var(--m-body)" stroke="var(--m-line)" stroke-width="3.5"/><path d="M46 17 l10 -6 v13 z" fill="var(--accent)" stroke="var(--m-line)" stroke-width="2" stroke-linejoin="round"/><path d="M46 17 l-10 -6 v13 z" fill="var(--accent)" stroke="var(--m-line)" stroke-width="2" stroke-linejoin="round"/><circle cx="46" cy="17.5" r="3.4" fill="var(--accent)" stroke="var(--m-line)" stroke-width="2"/><circle class="eye" cx="25" cy="42" r="4" fill="var(--m-line)"/><circle class="eye e2" cx="39" cy="42" r="4" fill="var(--m-line)"/><ellipse cx="18" cy="49" rx="4" ry="2.4" fill="var(--m-blush)"/><ellipse cx="46" cy="49" rx="4" ry="2.4" fill="var(--m-blush)"/><path d="M28 49 q4 4 8 0" stroke="var(--m-line)" stroke-width="2.6" fill="none" stroke-linecap="round"/></svg>
+          <span class="say">Alle Handys synchron, <b>kein Server</b> nötig — richtig clever gebaut! 🎉</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SKILLS ============ -->
+<section id="skills" aria-labelledby="skills-title">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="kicker">03 — Skills</span>
+      <h2 id="skills-title">Mein <span class="hl lav">Werkzeugkasten</span></h2>
+      <p>Ordentlich sortiert — Bit erklärt dir, was in welche Schublade gehört.</p>
+    </div>
+
+    <div class="skills-layout">
+      <div class="skills-guide reveal" aria-hidden="true">
+        <!-- BIT with sign -->
+        <svg class="mascot float" viewBox="0 0 210 210" role="img" aria-label="Bit hält ein Schild und erklärt die Skill-Kategorien">
+          <g fill="none" stroke="var(--m-line)" stroke-width="4.8" stroke-linejoin="round" stroke-linecap="round">
+            <circle cx="76" cy="80" r="15" fill="var(--m-body)"/>
+            <circle cx="134" cy="80" r="15" fill="var(--m-body)"/>
+            <ellipse cx="88" cy="188" rx="15" ry="10" fill="var(--m-body)"/>
+            <ellipse cx="122" cy="188" rx="15" ry="10" fill="var(--m-body)"/>
+            <!-- left arm up holding sign -->
+            <path d="M60 150 Q42 130 46 104" stroke-width="15"/>
+            <path d="M60 150 Q42 130 46 104" stroke="var(--m-body)" stroke-width="9"/>
+            <rect x="14" y="66" width="62" height="40" rx="11" fill="var(--card)"/>
+            <path d="M28 82 h34 M28 92 h24" stroke="var(--lav)" stroke-width="4.5"/>
+            <!-- body -->
+            <rect x="54" y="78" width="104" height="112" rx="50" fill="var(--m-body)"/>
+            <!-- bow -->
+            <path d="M136 66 l14 -9 v18 z" fill="var(--lav)"/><path d="M136 66 l-14 -9 v18 z" fill="var(--lav)"/><circle cx="136" cy="66" r="4.5" fill="var(--lav)"/>
+            <circle class="eye" cx="88" cy="126" r="10" fill="var(--m-line)" stroke="none"/>
+            <circle class="eye e2" cx="128" cy="126" r="10" fill="var(--m-line)" stroke="none"/>
+            <circle cx="91" cy="122" r="3" fill="#fff" stroke="none"/><circle cx="131" cy="122" r="3" fill="#fff" stroke="none"/>
+            <ellipse cx="72" cy="142" rx="9" ry="5.5" fill="var(--m-blush)" stroke="none"/>
+            <ellipse cx="144" cy="142" rx="9" ry="5.5" fill="var(--m-blush)" stroke="none"/>
+            <path d="M102 142 q6 7 12 0" stroke-width="4.2"/>
+            <!-- right arm -->
+            <path d="M152 148 Q168 160 160 176" stroke-width="15"/>
+            <path d="M152 148 Q168 160 160 176" stroke="var(--m-body)" stroke-width="9"/>
+            <circle cx="160" cy="178" r="9" fill="var(--m-body)"/>
+          </g>
+        </svg>
+        <div class="bubble">Ich lerne ständig dazu — je voller die Schublade, desto sicherer bin ich <span class="emo">🌷</span></div>
+      </div>
+
+      <div class="skill-groups">
+        <div class="sgroup reveal d1" style="--sg:var(--pink-soft)">
+          <div class="sg-head"><span class="sg-ic">🖥️</span><h3>Hardware & PC-Bau</h3><span class="lvl">Stark</span></div>
+          <div class="pills"><span>Komponenten-Auswahl</span><span>Zusammenbau</span><span>Kabelmanagement</span><span>Kühlung</span><span>UEFI/BIOS</span><span>Upgrades</span></div>
+        </div>
+        <div class="sgroup reveal d1" style="--sg:var(--blue-soft)">
+          <div class="sg-head"><span class="sg-ic">🪟</span><h3>Betriebssysteme</h3><span class="lvl">Sicher</span></div>
+          <div class="pills"><span>Windows 10/11</span><span>Installation & Setup</span><span>Treiber</span><span>Wiederherstellung</span><span>Basics Linux</span></div>
+        </div>
+        <div class="sgroup reveal d2" style="--sg:var(--mint-soft)">
+          <div class="sg-head"><span class="sg-ic">🌐</span><h3>Netzwerke</h3><span class="lvl">Solide</span></div>
+          <div class="pills"><span>Router-Konfiguration</span><span>WLAN-Optimierung</span><span>IP-Adressen</span><span>Portfreigaben</span><span>Grundlagen TCP/IP</span></div>
+        </div>
+        <div class="sgroup reveal d2" style="--sg:var(--yellow-soft)">
+          <div class="sg-head"><span class="sg-ic">🧰</span><h3>IT-Support & Troubleshooting</h3><span class="lvl">Stark</span></div>
+          <div class="pills"><span>Fehlerdiagnose</span><span>Ereignisanzeige</span><span>Datensicherung</span><span>Reparatur</span><span>Neuinstallation</span></div>
+        </div>
+        <div class="sgroup reveal d3" style="--sg:var(--pink-soft)">
+          <div class="sg-head"><span class="sg-ic">🎚️</span><h3>Audio & Streaming</h3><span class="lvl">Erfahren</span></div>
+          <div class="pills"><span>OBS Studio</span><span>Audio-Routing</span><span>Mikrofon-Setups</span><span>Szenen & Encoder</span></div>
+        </div>
+        <div class="sgroup reveal d3" style="--sg:var(--lav-soft)">
+          <div class="sg-head"><span class="sg-ic">🐍</span><h3>Programmier-Basics</h3><span class="lvl">Am Lernen</span></div>
+          <div class="pills"><span>Python (Grundlagen)</span><span>kleine Skripte</span><span>Automatisierung</span><span>Kommandozeile</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ÜBER MICH ============ -->
+<section id="ueber" aria-labelledby="about-title">
+  <div class="wrap">
+    <div class="about-layout">
+      <div class="about-visual reveal" aria-hidden="true">
+        <div class="hero-blob"></div>
+        <svg class="spark s2" style="top:18%;right:20%;width:22px" viewBox="0 0 16 16"><path d="M8 0 C9 5 11 7 16 8 C11 9 9 11 8 16 C7 11 5 9 0 8 C5 7 7 5 8 0 Z" fill="currentColor"/></svg>
+        <div class="bubble about-bubble">Vom Zocker zum Schrauber — und jetzt weiter! <span class="emo">☕</span></div>
+
+        <!-- NIMO friend -->
+        <svg class="mascot float c friend nimo" viewBox="0 0 140 100" role="img" aria-label="Nimo das Wölkchen"><g fill="var(--m-body)" stroke="var(--m-line)" stroke-width="4" stroke-linejoin="round"><path d="M34 84 C16 84 12 60 30 55 C26 34 56 28 64 44 C74 28 104 34 100 54 C118 56 116 84 96 84 Z"/></g><circle class="eye" cx="54" cy="60" r="4.5" fill="var(--m-line)"/><circle class="eye e2" cx="76" cy="60" r="4.5" fill="var(--m-line)"/><ellipse cx="45" cy="68" rx="5" ry="3" fill="var(--m-blush)"/><ellipse cx="85" cy="68" rx="5" ry="3" fill="var(--m-blush)"/><path d="M60 68 q5 5 10 0" stroke="var(--m-line)" stroke-width="3" fill="none" stroke-linecap="round"/></svg>
+
+        <!-- BIT relaxed with mug -->
+        <svg class="mascot float bit-main" viewBox="0 0 210 210" role="img" aria-label="Bit sitzt entspannt mit einer Tasse">
+          <g class="heart-bob"><path transform="translate(90,4) scale(1.1)" d="M12 21 C12 21 2 14 2 7 C2 3 5 1 8 1 C10 1 11.5 2.5 12 4 C12.5 2.5 14 1 16 1 C19 1 22 3 22 7 C22 14 12 21 12 21 Z" fill="var(--lav)" stroke="var(--m-line)" stroke-width="2.2" stroke-linejoin="round"/></g>
+          <g fill="none" stroke="var(--m-line)" stroke-width="4.8" stroke-linejoin="round" stroke-linecap="round">
+            <circle cx="76" cy="82" r="15" fill="var(--m-body)"/>
+            <circle cx="134" cy="82" r="15" fill="var(--m-body)"/>
+            <ellipse cx="88" cy="190" rx="15" ry="10" fill="var(--m-body)"/>
+            <ellipse cx="122" cy="190" rx="15" ry="10" fill="var(--m-body)"/>
+            <path d="M60 150 Q44 166 52 182" stroke-width="15"/>
+            <path d="M60 150 Q44 166 52 182" stroke="var(--m-body)" stroke-width="9"/>
+            <circle cx="53" cy="184" r="9" fill="var(--m-body)"/>
+            <rect x="52" y="80" width="106" height="114" rx="50" fill="var(--m-body)"/>
+            <path d="M134 68 l14 -9 v18 z" fill="var(--lav)"/><path d="M134 68 l-14 -9 v18 z" fill="var(--lav)"/><circle cx="134" cy="68" r="4.5" fill="var(--lav)"/>
+            <path d="M84 126 q4 -6 9 0" stroke-width="4.2"/>
+            <path d="M117 126 q4 -6 9 0" stroke-width="4.2"/>
+            <ellipse cx="72" cy="140" rx="9" ry="5.5" fill="var(--m-blush)" stroke="none"/>
+            <ellipse cx="138" cy="140" rx="9" ry="5.5" fill="var(--m-blush)" stroke="none"/>
+            <path d="M96 140 q9 8 18 0" stroke-width="4.2"/>
+            <!-- right arm holding mug -->
+            <path d="M154 150 Q166 162 160 176" stroke-width="15"/>
+            <path d="M154 150 Q166 162 160 176" stroke="var(--m-body)" stroke-width="9"/>
+            <rect x="152" y="174" width="28" height="24" rx="6" fill="var(--card)"/>
+            <path d="M180 179 q10 2 0 13" stroke-width="4"/>
+          </g>
+        </svg>
+      </div>
+
+      <div class="about-card reveal d2">
+        <span class="kicker">04 — Über mich</span>
+        <h2 id="about-title" style="font-size:clamp(1.7rem,3.6vw,2.4rem);margin:.3rem 0 1rem;font-weight:600">Neugierig, gründlich, gerne am Schrauben.</h2>
+        <p class="lead">Angefangen hat alles mit Gaming — irgendwann wollte ich nicht mehr nur spielen, sondern verstehen, wie die Kiste dahinter funktioniert.</p>
+        <p>Aus „Wie baue ich mir einen besseren PC?" wurde schnell mehr: Netzwerke einrichten, Fehler jagen, Setups für Freunde optimieren. Was mich antreibt, ist der Moment, in dem ein zickiges System endlich sauber läuft — und ich genau weiß, warum.</p>
+        <p>Jetzt will ich dieses Bastler-Wissen auf ein professionelles Fundament stellen: mit einer Ausbildung in der <b>Fachinformatik</b>. Ich bringe Geduld fürs Troubleshooting, Sinn für Ordnung und echte Praxis-Erfahrung mit — und Lust, jeden Tag dazuzulernen.</p>
+        <div class="mini-stats">
+          <div class="mstat"><b>5+</b><span>Jahre PC-Bastler-Erfahrung</span></div>
+          <div class="mstat"><b>20+</b><span>reparierte Rechner</span></div>
+          <div class="mstat"><b>∞</b><span>Lust auf Neues</span></div>
+        </div>
+        <div class="card-say" aria-hidden="true" style="margin-top:1.2rem">
+          <svg class="mascot buddy" viewBox="0 0 64 72"><circle cx="18" cy="24" r="10" fill="var(--m-body)" stroke="var(--m-line)" stroke-width="3.2"/><circle cx="46" cy="24" r="10" fill="var(--m-body)" stroke="var(--m-line)" stroke-width="3.2"/><rect x="10" y="22" width="44" height="44" rx="21" fill="var(--m-body)" stroke="var(--m-line)" stroke-width="3.5"/><path d="M46 17 l10 -6 v13 z" fill="var(--pink)" stroke="var(--m-line)" stroke-width="2" stroke-linejoin="round"/><path d="M46 17 l-10 -6 v13 z" fill="var(--pink)" stroke="var(--m-line)" stroke-width="2" stroke-linejoin="round"/><circle cx="46" cy="17.5" r="3.4" fill="var(--pink)" stroke="var(--m-line)" stroke-width="2"/><circle class="eye" cx="25" cy="42" r="4" fill="var(--m-line)"/><circle class="eye e2" cx="39" cy="42" r="4" fill="var(--m-line)"/><ellipse cx="18" cy="49" rx="4" ry="2.4" fill="var(--m-blush)"/><ellipse cx="46" cy="49" rx="4" ry="2.4" fill="var(--m-blush)"/><path d="M28 49 q4 4 8 0" stroke="var(--m-line)" stroke-width="2.6" fill="none" stroke-linecap="round"/></svg>
+          <span class="say"><b>20+ Rechner</b> gerettet — und das ist erst der Anfang! ✨</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ KONTAKT ============ -->
+<section id="kontakt" class="contact" aria-labelledby="contact-title">
+  <div class="wrap">
+    <div class="contact-card reveal">
+      <div class="contact-grid">
+        <div class="contact-copy">
+          <span class="kicker">05 — Kontakt</span>
+          <h2 id="contact-title">Lass uns reden — ich freu mich drauf!</h2>
+          <p>Ob Ausbildungsplatz, Praktikum oder einfach eine Frage zu einem Setup: Schreib mir gern. Ich antworte immer.</p>
+          <div class="contact-links">
+            <a href="mailto:deusaccizz@gmail.com" class="btn btn-light">✉️ E-Mail schreiben</a>
+            <a href="https://instagram.com/klepism" target="_blank" rel="noopener" class="btn btn-outline-l">📸 @klepism</a>
           </div>
         </div>
-      </div>
-    </div>
-
-    <!-- Weitere Projekte -->
-    <div class="cards">
-      <a href="/einig/" class="card reveal">
-        <div class="card-head">
-          <h3>einig — Gruppenentscheidungen ohne Drama</h3>
-          <span class="badge badge-live">Live</span>
+        <div class="contact-visual" aria-hidden="true">
+          <!-- BIT holding envelope -->
+          <svg class="mascot float" viewBox="0 0 200 210" role="img" aria-label="Bit hält einen Umschlag und lädt zum Schreiben ein">
+            <g class="heart-bob"><path transform="translate(86,6) scale(1.1)" d="M12 21 C12 21 2 14 2 7 C2 3 5 1 8 1 C10 1 11.5 2.5 12 4 C12.5 2.5 14 1 16 1 C19 1 22 3 22 7 C22 14 12 21 12 21 Z" fill="#fff" stroke="var(--m-line)" stroke-width="2.2" stroke-linejoin="round"/></g>
+            <g fill="none" stroke="var(--m-line)" stroke-width="4.8" stroke-linejoin="round" stroke-linecap="round">
+              <circle cx="72" cy="84" r="15" fill="var(--m-body)"/>
+              <circle cx="128" cy="84" r="15" fill="var(--m-body)"/>
+              <ellipse cx="84" cy="192" rx="15" ry="10" fill="var(--m-body)"/>
+              <ellipse cx="116" cy="192" rx="15" ry="10" fill="var(--m-body)"/>
+              <rect x="48" y="82" width="104" height="114" rx="50" fill="var(--m-body)"/>
+              <path d="M130 70 l14 -9 v18 z" fill="var(--pink)"/><path d="M130 70 l-14 -9 v18 z" fill="var(--pink)"/><circle cx="130" cy="70" r="4.5" fill="var(--pink)"/>
+              <circle class="eye" cx="84" cy="128" r="10" fill="var(--m-line)" stroke="none"/>
+              <circle class="eye e2" cx="120" cy="128" r="10" fill="var(--m-line)" stroke="none"/>
+              <circle cx="87" cy="124" r="3" fill="#fff" stroke="none"/><circle cx="123" cy="124" r="3" fill="#fff" stroke="none"/>
+              <ellipse cx="68" cy="144" rx="9" ry="5.5" fill="var(--m-blush)" stroke="none"/>
+              <ellipse cx="136" cy="144" rx="9" ry="5.5" fill="var(--m-blush)" stroke="none"/>
+              <path d="M96 144 q6 7 12 0" stroke-width="4.2"/>
+              <!-- arms holding envelope -->
+              <path d="M56 156 Q64 178 84 182" stroke-width="15"/>
+              <path d="M56 156 Q64 178 84 182" stroke="var(--m-body)" stroke-width="9"/>
+              <path d="M144 156 Q136 178 116 182" stroke-width="15"/>
+              <path d="M144 156 Q136 178 116 182" stroke="var(--m-body)" stroke-width="9"/>
+              <rect x="70" y="166" width="60" height="42" rx="9" fill="var(--card)"/>
+              <path d="M70 172 L100 191 L130 172" stroke-width="3.8"/>
+            </g>
+          </svg>
         </div>
-        <p>
-          „Wo essen wir?“ — 40 Nachrichten, keine Antwort. einig löst das:
-          Frage erstellen, Link teilen, alle stimmen ab, fertig.
-          Web-App ohne Account und ohne Installation.
-        </p>
-        <div class="project-tags"><span>JavaScript</span><span>Firebase</span><span>Web-App</span></div>
-        <span class="card-link">einig ausprobieren →</span>
-      </a>
-      <div class="card reveal reveal-delay-1">
-        <div class="card-head">
-          <h3>Nächstes Projekt</h3>
-          <span class="badge badge-soon">In Arbeit</span>
-        </div>
-        <p>
-          Ich baue ständig weiter — als Nächstes stehen der Play-Store-Release
-          von BauLog und neue Features aus dem Tester-Feedback an.
-          Schau bald wieder vorbei.
-        </p>
-        <div class="project-tags"><span>Flutter</span><span>Coming soon</span></div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ÜBER MICH -->
-  <section id="ueber">
-    <div class="section-label reveal">Über mich</div>
-    <h2 class="reveal reveal-delay-1">Wer hier baut</h2>
-    <p class="section-desc reveal reveal-delay-2">Kurz und ehrlich.</p>
-    <div class="about-grid">
-      <div class="about-avatar reveal">K</div>
-      <div class="about-text">
-        <p class="reveal reveal-delay-1">
-          Ich bin Kevin, <strong>23, aus dem Odenwald</strong>. Statt auf den perfekten
-          Moment zu warten, baue ich Dinge und bringe sie raus: Meine erste App
-          entstand, weil Handwerker in meiner Umgebung jeden Abend mit
-          Papier-Berichten kämpfen.
-        </p>
-        <p class="reveal reveal-delay-2">
-          Ich arbeite mit <strong>Flutter, Dart und modernen AI-Tools</strong> —
-          und lerne bei jedem Projekt dazu. Was zählt, ist das Ergebnis:
-          Software, die jemand freiwillig jeden Tag benutzt.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- SKILLS -->
-  <section id="skills">
-    <div class="section-label reveal">Skills</div>
-    <h2 class="reveal reveal-delay-1">Womit ich arbeite</h2>
-    <p class="section-desc reveal reveal-delay-2">Mein Werkzeugkasten — stetig wachsend.</p>
-    <div class="skills-grid">
-      <div class="skill-item reveal reveal-delay-1"><span class="icon">💙</span> Flutter</div>
-      <div class="skill-item reveal reveal-delay-1"><span class="icon">🎯</span> Dart</div>
-      <div class="skill-item reveal reveal-delay-1"><span class="icon">🐍</span> Python</div>
-      <div class="skill-item reveal reveal-delay-2"><span class="icon">🟨</span> JavaScript</div>
-      <div class="skill-item reveal reveal-delay-2"><span class="icon">🔥</span> Firebase</div>
-      <div class="skill-item reveal reveal-delay-2"><span class="icon">🗄️</span> SQLite</div>
-      <div class="skill-item reveal reveal-delay-3"><span class="icon">📱</span> Android</div>
-      <div class="skill-item reveal reveal-delay-3"><span class="icon">🤖</span> AI-Dev</div>
-      <div class="skill-item reveal reveal-delay-3"><span class="icon">🎨</span> UI Design</div>
-      <div class="skill-item reveal reveal-delay-3"><span class="icon">🌿</span> Git</div>
-    </div>
-  </section>
-
-  <!-- KONTAKT -->
-  <section id="kontakt">
-    <div class="section-label reveal">Kontakt</div>
-    <h2 class="reveal reveal-delay-1">Lass uns reden</h2>
-    <div class="contact-card reveal reveal-delay-2">
-      <h3>Feedback? Idee? Einfach Hallo?</h3>
-      <p>Ob du BauLog testen willst, eine Frage hast oder zusammenarbeiten möchtest — ich antworte immer.</p>
-      <div class="contact-links">
-        <a href="mailto:deusaccizz@gmail.com" class="btn btn-primary">✉️ E-Mail schreiben</a>
-        <a href="https://instagram.com/klepism" class="btn btn-outline" target="_blank" rel="noopener">📸 @klepism</a>
-      </div>
-    </div>
-  </section>
-
-</div>
+</main>
 
 <footer>
-  © 2026 Kevin Klepov · Designed & built im Odenwald <span class="heart">♥</span>
+  <div class="wrap">
+    <a href="#top" class="brand" aria-label="Nach oben">
+      <svg class="brand-mascot" viewBox="0 0 64 64" aria-hidden="true">
+        <circle cx="18" cy="20" r="9" fill="var(--m-body)" stroke="var(--m-line)" stroke-width="3"/>
+        <circle cx="46" cy="20" r="9" fill="var(--m-body)" stroke="var(--m-line)" stroke-width="3"/>
+        <rect x="12" y="18" width="40" height="38" rx="18" fill="var(--m-body)" stroke="var(--m-line)" stroke-width="3.5"/>
+        <circle cx="26" cy="36" r="3.4" fill="var(--m-line)"/><circle cx="38" cy="36" r="3.4" fill="var(--m-line)"/>
+        <ellipse cx="20" cy="42" rx="3.4" ry="2.1" fill="var(--m-blush)"/><ellipse cx="44" cy="42" rx="3.4" ry="2.1" fill="var(--m-blush)"/>
+        <path d="M29 41 q3 3 6 0" stroke="var(--m-line)" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+      </svg>
+      Kevin Klepov
+    </a>
+    <small>© 2026 · Angehender Fachinformatiker · Hessen 🇩🇪<br>
+    <span class="crew">geführt von der Crew: Bit 🩷 Stella ⭐ Nimo ☁️</span></small>
+  </div>
 </footer>
 
 <script>
-  // Scroll-Reveal
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        observer.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-  // Nav-Hintergrund beim Scrollen
-  const nav = document.getElementById('nav');
-  window.addEventListener('scroll', () => {
-    nav.classList.toggle('scrolled', window.scrollY > 40);
-  }, { passive: true });
-
-  // Spotlight folgt der Maus (nur Desktop, respektiert reduced motion)
-  const spot = document.getElementById('spotlight');
-  if (window.matchMedia('(pointer: fine)').matches && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    window.addEventListener('mousemove', (e) => {
-      spot.style.setProperty('--mx', e.clientX + 'px');
-      spot.style.setProperty('--my', e.clientY + 'px');
-    }, { passive: true });
-  }
+(function(){
+  var root=document.documentElement;
+  try{var t=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');root.setAttribute('data-theme',t);}catch(e){}
+  var meta=document.querySelector('meta[name=theme-color]');
+  function syncMeta(){meta.setAttribute('content',root.getAttribute('data-theme')==='dark'?'#241A20':'#FFF6FB')}
+  syncMeta();
+  document.getElementById('themeBtn').addEventListener('click',function(){
+    var n=root.getAttribute('data-theme')==='dark'?'light':'dark';root.setAttribute('data-theme',n);
+    try{localStorage.setItem('theme',n)}catch(e){}syncMeta();
+  });
+  var nav=document.getElementById('nav');
+  addEventListener('scroll',function(){nav.classList.toggle('scrolled',scrollY>8)},{passive:true});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -50px 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+})();
 </script>
-
 </body>
 </html>
